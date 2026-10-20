@@ -28,6 +28,10 @@ details summary{list-style:none;cursor:pointer}
 details summary::-webkit-details-marker{display:none}
 details[open] .faq-plus{transform:rotate(45deg)}
 input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset:1px}
+@keyframes heroIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero-in{opacity:0;animation:heroIn 1.4s cubic-bezier(.22,.61,.36,1) forwards}
+.hero-in-1{animation-delay:.2s}.hero-in-2{animation-delay:.5s}.hero-in-3{animation-delay:.85s}
+@media (prefers-reduced-motion:reduce){.hero-in{opacity:1;animation:none}}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box}
@@ -71,12 +75,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
   <!-- HERO -->
   <section id="inicio" style="padding: 120px 24px 88px; background: #F3F1EE">
     <div style="max-width: 1200px; margin: 0 auto">
-      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 36px">
+      <div class="hero-in hero-in-1" style="display: flex; align-items: center; gap: 14px; margin-bottom: 36px">
         <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
         <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Advocacia empresarial</span>
       </div>
-      <h1 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(42px, 6vw, 76px); line-height: 1.08; letter-spacing: -0.01em; margin: 0; max-width: 940px">Rigor jurídico a serviço de <em style="font-style: italic">quem decide.</em></h1>
-      <p style="font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; color: #4A423D; max-width: 606px; margin: 32px 0 0; text-align: start">Assessoria em contratos, societário e contencioso com a precisão de um departamento jurídico corporativo e a proximidade de um escritório dedicado.</p>
+      <h1 class="hero-in hero-in-2" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(42px, 6vw, 76px); line-height: 1.08; letter-spacing: -0.01em; margin: 0; max-width: 940px">Rigor jurídico a serviço de <em style="font-style: italic">quem decide.</em></h1>
+      <p class="hero-in hero-in-3" style="font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; color: #4A423D; max-width: 606px; margin: 32px 0 0; text-align: start">Assessoria em contratos, societário e contencioso com a precisão de um departamento jurídico corporativo e a proximidade de um escritório dedicado.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 44px"><a href="#contato" style="text-decoration: none; background: rgb(42, 37, 34); color: rgb(255, 255, 255); padding: 16px 28px; border-radius: 2px; font-size: 16px; font-weight: 500">Agende uma conversa</a>
         <a href="#atuacao" style="text-decoration: none; border: 1px solid rgb(42, 37, 34); color: rgb(42, 37, 34); padding: 15px 27px; border-radius: 2px; font-size: 16px; font-weight: 500">Conheça nossas áreas de atuação</a>
       </div>
@@ -199,7 +203,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
   <!-- 04 SOBRE -->
   <section id="sobre" style="padding: 112px 24px; background: #FFFFFF">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 96px; align-items: center">
-      <div style="flex: 1 1 440px; min-width: 0; max-width: 820px">
+      <img class="foto-conrado" src="/conrado-muller-milek.webp" loading="lazy" decoding="async" alt="Conrado Müller Milek, advogado" width="880" height="1100" style="flex: 1 1 320px; min-width: 0; max-width: 440px; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; background: #DDD5CB">
+      <div style="flex: 1 1 440px; min-width: 0">
         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
           <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
           <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">04 · Quem conduz</span>
