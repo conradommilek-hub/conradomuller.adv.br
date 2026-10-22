@@ -32,6 +32,30 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
 .hero-in{opacity:0;animation:heroIn 2.2s cubic-bezier(.33,0,.2,1) forwards}
 .hero-in-2{animation-delay:.35s}.hero-in-3{animation-delay:1.05s}
 @media (prefers-reduced-motion:reduce){.hero-in{opacity:1;animation:none}}
+.v-stage{display:flex;flex-wrap:wrap;align-items:stretch;gap:32px 64px;padding:0 0 40px}
+.v-u{font-family:'Spectral SC',Georgia,serif;font-weight:600;font-size:clamp(110px,10vw,148px);line-height:.82;color:#D2601A;align-self:center}
+.v-div{width:1px;background:#D3CAC0}
+.v-rot{position:relative;flex:1 1 420px;min-width:0;min-height:200px}
+.v-slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:18px;opacity:0;animation:vCycle 21s cubic-bezier(.33,0,.2,1) infinite both}
+.v-s2{animation-delay:7s}.v-s3{animation-delay:14s}
+.v-n{font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#6B6058}
+.v-pt{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,4.6vw,62px);line-height:1.06;margin:0}
+.v-de{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin:0}
+.v-lbl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6B6058}
+.v-word{font-family:'Spectral SC',Georgia,serif;font-weight:600;font-size:28px;letter-spacing:.04em;line-height:1;white-space:nowrap}
+.v-word b{font-weight:600;color:#D2601A}
+.v-rest{display:inline-block;clip-path:inset(0 100% 0 0);animation:vWord 21s cubic-bezier(.33,0,.2,1) infinite both}
+.v-s2 .v-rest{animation-delay:7s}.v-s3 .v-rest{animation-delay:14s}
+.v-bars{display:flex;gap:10px}
+.v-bar{position:relative;width:56px;height:2px;background:#DDD5CB;overflow:hidden}
+.v-bar::after{content:'';position:absolute;inset:0;background:#6B6058;transform:scaleX(0);transform-origin:left;animation:vBar 21s linear infinite both}
+.v-bar:nth-child(2)::after{animation-delay:7s}.v-bar:nth-child(3)::after{animation-delay:14s}
+@keyframes vCycle{0%{opacity:0;transform:translateY(6px)}6%{opacity:1;transform:none}29%{opacity:1;transform:none}33.33%{opacity:0;transform:translateY(-4px)}100%{opacity:0}}
+@keyframes vWord{0%,5%{clip-path:inset(0 100% 0 0)}15%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes vBar{0%{transform:scaleX(0)}33.33%{transform:scaleX(1)}33.34%,100%{transform:scaleX(0)}}
+@media (max-width:760px){.v-stage{gap:24px}.v-u{font-size:96px}.v-div{display:none}.v-rot{min-height:220px}.v-word{font-size:24px}}
+@media (min-width:1100px){.card-t{min-height:2.5em}}
+@media (prefers-reduced-motion:reduce){.v-slide,.v-rest,.v-bar::after{animation:none}.v-s1{opacity:1}.v-rest{clip-path:none}.v-bars{display:none}}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box}
@@ -41,11 +65,28 @@ img{max-width:100%}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2601A;outline-offset:3px}
 .form-status{font-size:15px;line-height:1.5;margin:0;min-height:1.5em}
 @media (max-width:760px){
-  header nav{gap:10px 20px!important;font-size:14px!important}
   section h2{font-size:clamp(30px,8vw,46px)!important}
   section{padding-top:80px!important;padding-bottom:80px!important}
 }
+
+.menu-btn{display:none}
+@media (max-width:760px){
+  header > div{gap:12px!important}
+  header a[aria-label]{gap:12px!important}
+  header a[aria-label] > span:first-child{font-size:38px!important}
+  header a[aria-label] > span:nth-child(2){height:32px!important}
+  header a[aria-label] > span:nth-child(3) > span:first-child{font-size:19px!important}
+  header a[aria-label] > span:nth-child(3) > span:last-child{font-size:9px!important;letter-spacing:.2em!important}
+  .menu-btn{display:inline-flex;align-items:center;font:inherit;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid #2A2522;color:#2A2522;padding:9px 12px;border-radius:2px;cursor:pointer}
+  #nav-principal{display:none!important;width:100%;flex-direction:column;align-items:stretch!important;gap:0!important;padding:4px 0 8px}
+  #nav-principal.open{display:flex!important}
+  #nav-principal a{display:block;padding:14px 0!important;border-top:1px solid #DDD5CB;border-bottom:0!important;font-size:16px}
+  #nav-principal a:last-child{margin-top:12px;padding:14px 20px!important;text-align:center;border-top:0}
+}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LegalService","name":"Conrado Müller Advocacia Empresarial","url":"https://conradomuller.adv.br/","image":"https://conradomuller.adv.br/og.png","logo":"https://conradomuller.adv.br/apple-touch-icon.png","description":"Advocacia empresarial para empresários e pequenas e médias empresas: contratos, societário e governança, contencioso cível, trabalhista empresarial e assessoria jurídica contínua.","telephone":"+55 42 98441-4866","email":"contato@conradomuller.adv.br","address":{"@type":"PostalAddress","addressLocality":"Ponta Grossa","addressRegion":"PR","addressCountry":"BR"},"areaServed":{"@type":"Country","name":"Brasil"},"knowsAbout":["Direito Empresarial","Contratos","Direito Societário","Governança","Contencioso Cível","Direito do Trabalho"],"founder":{"@type":"Person","name":"Conrado Müller Milek","jobTitle":"Advogado","image":"https://conradomuller.adv.br/conrado-muller-milek.webp","sameAs":["https://www.linkedin.com/in/conradomilek"]},"sameAs":["https://www.instagram.com/conradomuller.adv","https://www.linkedin.com/in/conradomilek"]}
+</script>
 </head>
 <body>
 
@@ -62,7 +103,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
           <span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #6B6058">Advocacia Empresarial</span>
         </span>
       </a>
-      <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px"><a href="#escritorio" style="text-decoration: none">O Escritório</a>
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+        <input type="hidden" name="_subject" value="Novo contato pelo site">
+        <button type="submit" class="menu-btn" aria-expanded="false" aria-controls="nav-principal">Menu</button>
+      <nav id="nav-principal" aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px"><a href="#escritorio" style="text-decoration: none">O Escritório</a>
         <a href="#atuacao" style="text-decoration: none">Atuação</a>
         <a href="#metodo" style="text-decoration: none">Método</a>
         <a href="#conteudos" style="text-decoration: none">Conteúdos</a>
@@ -99,12 +143,41 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
           <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
           <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">01 · O escritório</span>
         </div>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 46px; line-height: 1.15; margin: 0; max-width: 513px">Advocacia empresarial com o olhar de quem está dentro da operação.</h2>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0; max-width: 513px">Advocacia empresarial com o olhar de quem está dentro da operação.</h2>
       </div>
       <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px; font-size: 18px; line-height: 1.7; color: #4A423D; padding-top: 8px">
         <p style="margin: 0">O escritório consolida a experiência adquirida em anos de atuação na assessoria jurídica interna de empresas de grande porte, onde o Direito precisa ser útil à decisão: claro, tempestivo e consciente do impacto financeiro e operacional de cada escolha.</p>
         <p style="margin: 0">Dessa experiência vem a nossa forma de trabalhar: traduzir a questão jurídica para a linguagem de quem decide e construir soluções seguras e viáveis do ponto de vista do negócio, com rigor técnico e atenção ao que é aplicável na prática.</p>
-        
+      </div>
+    </div>
+
+    <!-- VALORES EM ROTAÇÃO -->
+    <div style="max-width: 1200px; margin: 88px auto 0">
+      <span style="display: block; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: #6B6058; margin-bottom: 28px">Nossos valores</span>
+      <div class="v-stage" aria-hidden="true">
+        <span class="v-u" style="line-height: 1.25">Ü</span>
+        <span class="v-div"></span>
+        <div class="v-rot">
+          <div class="v-slide v-s1">
+            <span class="v-n">01</span>
+            <p class="v-pt">Decisão fundamentada</p>
+            <p class="v-de"><span class="v-lbl">do alemão</span><span class="v-word"><b>Ü</b><span class="v-rest">berlegung</span></span></p>
+          </div>
+          <div class="v-slide v-s2">
+            <span class="v-n">02</span>
+            <p class="v-pt">Visão estratégica</p>
+            <p class="v-de"><span class="v-lbl">do alemão</span><span class="v-word"><b>Ü</b><span class="v-rest">berblick</span></span></p>
+          </div>
+          <div class="v-slide v-s3">
+            <span class="v-n">03</span>
+            <p class="v-pt">Convicção técnica</p>
+            <p class="v-de"><span class="v-lbl">do alemão</span><span class="v-word"><b>Ü</b><span class="v-rest">berzeugung</span></span></p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px">
+        <div class="v-bars" aria-hidden="true"><span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span></div>
+        <a href="/valores" style="font-size: 16px; font-weight: 500; color: #2A2522">Conheça melhor cada valor</a>
       </div>
     </div>
   </section>
@@ -122,27 +195,27 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
       <div style="display: flex; flex-wrap: wrap; gap: 1px; background: #DDD5CB; border: 1px solid #DDD5CB">
         <article style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; padding: 40px 36px; display: flex; flex-direction: column; gap: 16px">
           <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058">01</span>
-          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; margin: 0">Contratos</h3>
+          <h3 class="card-t" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.25; margin: 0">Contratos</h3>
           <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A423D">Elaboração, revisão e negociação de contratos comerciais, de prestação de serviços, fornecimento e parceria, com cláusulas que antecipam conflitos em vez de apenas reagir a eles.</p>
         </article>
         <article style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; padding: 40px 36px; display: flex; flex-direction: column; gap: 16px">
           <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058">02</span>
-          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; margin: 0">Societário e Governança</h3>
+          <h3 class="card-t" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.25; margin: 0">Societário e Governança</h3>
           <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A423D">Constituição e reorganização de sociedades, acordos de sócios, alterações contratuais e definição de regras claras de decisão, sucessão e saída.</p>
         </article>
         <article style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; padding: 40px 36px; display: flex; flex-direction: column; gap: 16px">
           <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058">03</span>
-          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; margin: 0">Assessoria Jurídica Contínua</h3>
+          <h3 class="card-t" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.25; margin: 0">Assessoria Jurídica Contínua</h3>
           <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A423D">Acompanhamento mensal para empresas sem departamento jurídico próprio: consultas, pareceres, revisão de documentos e apoio às decisões do dia a dia.</p>
         </article>
         <article style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; padding: 40px 36px; display: flex; flex-direction: column; gap: 16px">
           <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058">04</span>
-          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; margin: 0">Contencioso Cível</h3>
+          <h3 class="card-t" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.25; margin: 0">Contencioso Cível</h3>
           <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A423D">Condução de disputas empresariais, cobranças e ações de responsabilidade civil, com avaliação prévia de risco, custo e alternativas de composição.</p>
         </article>
         <article style="flex: 1 1 340px; min-width: 0; background: #FFFFFF; padding: 40px 36px; display: flex; flex-direction: column; gap: 16px">
           <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058">05</span>
-          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; margin: 0">Trabalhista Empresarial</h3>
+          <h3 class="card-t" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.25; margin: 0">Trabalhista Empresarial</h3>
           <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A423D">Defesa em reclamatórias, prevenção de passivos, revisão de rotinas de jornada e contratação, e apoio em fiscalizações e procedimentos administrativos.</p>
         </article>
         <article style="flex: 1 1 340px; min-width: 0; background: #2A2522; color: #F3F1EE; padding: 40px 36px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
@@ -184,24 +257,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
           <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A423D">Retorno no prazo combinado, registro de cada etapa e disponibilidade para os desdobramentos da decisão tomada.</p>
         </li>
       </ol>
+      <div style="margin-top: 72px; padding-top: 32px; border-top: 1px solid #DDD5CB; display: flex; flex-wrap: wrap; gap: 20px 56px; align-items: flex-start">
+        <h3 style="flex: 0 0 200px; margin: 0; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: #6B6058; padding-top: 4px">Nossos compromissos</h3>
+        <ul style="flex: 1 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 20px 32px; font-size: 16px; line-height: 1.6; color: #2A2522">
+          <li style="flex: 1 1 40%; min-width: 240px; padding-left: 16px; border-left: 1px solid #DDD5CB">Escopo e honorários definidos por escrito antes de começar.</li>
+          <li style="flex: 1 1 40%; min-width: 240px; padding-left: 16px; border-left: 1px solid #DDD5CB">Prazo de retorno informado em cada atendimento, e cumprido.</li>
+          <li style="flex: 1 1 40%; min-width: 240px; padding-left: 16px; border-left: 1px solid #DDD5CB">Pareceres com recomendação clara, não apenas com teses.</li>
+          <li style="flex: 1 1 40%; min-width: 240px; padding-left: 16px; border-left: 1px solid #DDD5CB">Sigilo e discrição como regra em todas as etapas.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- COMPROMISSOS -->
-  <section aria-labelledby="compromissos-titulo" style="padding: 88px 24px; background: #F3F1EE">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 96px; align-items: flex-start">
-      <h2 id="compromissos-titulo" style="flex: 1 1 260px; min-width: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.2; margin: 0">Nossos compromissos</h2>
-      <ul style="flex: 2 1 520px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
-        <li style="display: flex; gap: 24px; padding: 22px 0; border-top: 1px solid #DDD5CB; font-size: 18px; line-height: 1.55"><span style="color: #6B6058; font-size: 14px; padding-top: 4px; min-width: 24px">i.</span>Escopo e honorários definidos por escrito antes de começar.</li>
-        <li style="display: flex; gap: 24px; padding: 22px 0; border-top: 1px solid #DDD5CB; font-size: 18px; line-height: 1.55"><span style="color: #6B6058; font-size: 14px; padding-top: 4px; min-width: 24px">ii.</span>Prazo de retorno informado em cada atendimento, e cumprido.</li>
-        <li style="display: flex; gap: 24px; padding: 22px 0; border-top: 1px solid #DDD5CB; font-size: 18px; line-height: 1.55"><span style="color: #6B6058; font-size: 14px; padding-top: 4px; min-width: 24px">iii.</span>Pareceres com recomendação clara, não apenas com teses.</li>
-        <li style="display: flex; gap: 24px; padding: 22px 0; border-top: 1px solid #DDD5CB; border-bottom: 1px solid #DDD5CB; font-size: 18px; line-height: 1.55"><span style="color: #6B6058; font-size: 14px; padding-top: 4px; min-width: 24px">iv.</span>Sigilo e discrição como regra em todas as etapas.</li>
-      </ul>
-    </div>
-  </section>
 
   <!-- 04 SOBRE -->
-  <section id="sobre" style="padding: 112px 24px; background: #FFFFFF">
+  <section id="sobre" style="padding: 112px 24px; background: #F3F1EE">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 96px; align-items: center">
       <img src="/conrado-muller-milek.webp" alt="Conrado Müller Milek, advogado" width="880" height="1100" loading="lazy" decoding="async" style="flex: 1 1 320px; min-width: 0; max-width: 440px; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; display: block; background: #DDD5CB">
       <div style="flex: 1 1 440px; min-width: 0">
@@ -209,10 +279,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
           <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
           <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">04 · Quem conduz</span>
         </div>
-        <h2 style="font-family: Playfair Display, serif; font-weight: 400; font-size: 46px; line-height: 1.15; margin: 0">Conrado Müller Milek</h2>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0">Conrado Müller Milek</h2>
         <p style="margin: 10px 0 32px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6058">Advogado · OAB/PR 114.843</p>
         <div style="display: flex; flex-direction: column; gap: 18px; font-size: 18px; line-height: 1.7; color: #4A423D">
-          <div style="margin: 0"><p style="text-align: left; font-size: 17px">Advogado com atuação consultiva e contenciosa nas áreas de Direito Empresarial, Societário, Contratual e Trabalhista. Possui mais de 8 anos de experiência na assessoria jurídica interna de empresas de grande porte, atuando em ambientes de alta complexidade, com foco na prevenção de riscos, na estruturação de operações negociais, na gestão de passivos e na condução estratégica de litígios.</p></div>
+          <div style="margin: 0"><p style="margin: 0">Advogado com atuação consultiva e contenciosa nas áreas de Direito Empresarial, Societário, Contratual e Trabalhista. Possui mais de 8 anos de experiência na assessoria jurídica interna de empresas de grande porte, atuando em ambientes de alta complexidade, com foco na prevenção de riscos, na estruturação de operações negociais, na gestão de passivos e na condução estratégica de litígios.</p></div>
           
           
         </div>
@@ -228,7 +298,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
   </section>
 
   <!-- 05 CONTEÚDOS -->
-  <section id="conteudos" style="padding: 112px 24px; background: #F3F1EE">
+  <section id="conteudos" style="padding: 112px 24px; background: #FFFFFF">
     <div style="max-width: 1200px; margin: 0 auto">
       <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
         <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
@@ -259,7 +329,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
   </section>
 
   <!-- 06 DÚVIDAS -->
-  <section id="duvidas" style="padding: 112px 24px; background: #FFFFFF">
+  <section id="duvidas" style="padding: 112px 24px; background: #F3F1EE">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 96px">
       <div style="flex: 1 1 280px; min-width: 0">
         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
@@ -351,7 +421,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
         </label>
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <input type="hidden" name="_subject" value="Novo contato pelo site">
-        <button type="submit" style="align-self: flex-start; font: inherit; font-size: 16px; font-weight: 700; background: #D2601A; color: #2A2522; border: none; padding: 16px 32px; border-radius: 2px; cursor: pointer; min-height: 48px">Enviar mensagem</button>
+        <button type="submit" style="align-self: flex-start; font: inherit; font-size: 16px; font-weight: 500; background: #F3F1EE; color: #2A2522; border: none; padding: 16px 32px; border-radius: 2px; cursor: pointer; min-height: 48px">Enviar mensagem</button>
         <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -382,6 +452,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
 
 </div>
 
+<script>
+(function(){
+  var b=document.querySelector('.menu-btn'), n=document.getElementById('nav-principal'); if(!b||!n) return;
+  function set(o){ n.classList.toggle('open',o); b.setAttribute('aria-expanded',o?'true':'false'); b.textContent=o?'Fechar':'Menu'; }
+  b.addEventListener('click',function(){ set(!n.classList.contains('open')); });
+  n.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
+})();
+</script>
 <script>
 (function(){
   var f=document.getElementById('form-contato'); if(!f) return;
