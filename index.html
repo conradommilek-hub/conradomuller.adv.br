@@ -40,22 +40,16 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
 .v-s2{animation-delay:7s}.v-s3{animation-delay:14s}
 .v-n{font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#6B6058}
 .v-pt{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,4.6vw,62px);line-height:1.06;margin:0}
-.v-de{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin:0}
-.v-lbl{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6B6058}
-.v-word{font-family:'Spectral SC',Georgia,serif;font-weight:600;font-size:28px;letter-spacing:.04em;line-height:1;white-space:nowrap}
-.v-word b{font-weight:600;color:#D2601A}
-.v-rest{display:inline-block;clip-path:inset(0 100% 0 0);animation:vWord 21s cubic-bezier(.33,0,.2,1) infinite both}
-.v-s2 .v-rest{animation-delay:7s}.v-s3 .v-rest{animation-delay:14s}
+.v-sub{font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:#4A423D;margin:0;max-width:560px}
 .v-bars{display:flex;gap:10px}
 .v-bar{position:relative;width:56px;height:2px;background:#DDD5CB;overflow:hidden}
 .v-bar::after{content:'';position:absolute;inset:0;background:#6B6058;transform:scaleX(0);transform-origin:left;animation:vBar 21s linear infinite both}
 .v-bar:nth-child(2)::after{animation-delay:7s}.v-bar:nth-child(3)::after{animation-delay:14s}
 @keyframes vCycle{0%{opacity:0;transform:translateY(6px)}6%{opacity:1;transform:none}29%{opacity:1;transform:none}33.33%{opacity:0;transform:translateY(-4px)}100%{opacity:0}}
-@keyframes vWord{0%,5%{clip-path:inset(0 100% 0 0)}15%,100%{clip-path:inset(0 0 0 0)}}
 @keyframes vBar{0%{transform:scaleX(0)}33.33%{transform:scaleX(1)}33.34%,100%{transform:scaleX(0)}}
-@media (max-width:760px){.v-stage{gap:24px}.v-u{font-size:96px}.v-div{display:none}.v-rot{min-height:220px}.v-word{font-size:24px}}
+@media (max-width:760px){.v-stage{gap:24px}.v-u{font-size:96px}.v-div{display:none}.v-rot{min-height:220px}}
 @media (min-width:1100px){.card-t{min-height:2.5em}}
-@media (prefers-reduced-motion:reduce){.v-slide,.v-rest,.v-bar::after{animation:none}.v-s1{opacity:1}.v-rest{clip-path:none}.v-bars{display:none}}
+@media (prefers-reduced-motion:reduce){.v-slide,.v-bar::after{animation:none}.v-s1{opacity:1}.v-bars{display:none}}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box}
@@ -161,17 +155,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
           <div class="v-slide v-s1">
             <span class="v-n">01</span>
             <p class="v-pt">Decisão fundamentada</p>
-            <p class="v-de"><span class="v-lbl">do alemão</span><span class="v-word"><b>Ü</b><span class="v-rest">berlegung</span></span></p>
+            <p class="v-sub">Análise dos fatos, das alternativas e das consequências de cada escolha.</p>
           </div>
           <div class="v-slide v-s2">
             <span class="v-n">02</span>
             <p class="v-pt">Visão estratégica</p>
-            <p class="v-de"><span class="v-lbl">do alemão</span><span class="v-word"><b>Ü</b><span class="v-rest">berblick</span></span></p>
+            <p class="v-sub">O jurídico lido em conjunto com o econômico e o operacional do negócio.</p>
           </div>
           <div class="v-slide v-s3">
             <span class="v-n">03</span>
             <p class="v-pt">Convicção técnica</p>
-            <p class="v-de"><span class="v-lbl">do alemão</span><span class="v-word"><b>Ü</b><span class="v-rest">berzeugung</span></span></p>
+            <p class="v-sub">Firmeza nas posições, com abertura para reconhecer riscos e rever estratégias.</p>
           </div>
         </div>
       </div>
