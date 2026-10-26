@@ -3,24 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Conrado Müller Advocacia Empresarial · Ponta Grossa, Paraná</title>
+<title>Conrado Müller - Advocacia Empresarial em Ponta Grossa, Paraná</title>
 <meta name="description" content="Advocacia empresarial para empresários e pequenas e médias empresas: contratos, societário, contencioso cível e trabalhista empresarial. Sede em Ponta Grossa, Paraná, com atendimento online em todo o Brasil.">
 <link rel="canonical" href="https://conradomuller.adv.br">
 <meta name="theme-color" content="#F3F1EE">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="Conrado Müller Advocacia Empresarial">
-<meta property="og:title" content="Conrado Müller Advocacia Empresarial · Ponta Grossa, Paraná">
+<meta property="og:site_name" content="Conrado Müller Advocacia">
+<meta property="og:title" content="Conrado Müller - Advocacia Empresarial em Ponta Grossa, Paraná">
 <meta property="og:description" content="Advocacia empresarial para empresários e pequenas e médias empresas: contratos, societário, contencioso cível e trabalhista empresarial. Sede em Ponta Grossa, Paraná, com atendimento online em todo o Brasil.">
 <meta property="og:url" content="https://conradomuller.adv.br">
 <meta property="og:image" content="https://conradomuller.adv.br/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;family=Spectral+SC:wght@400;500;600;700&amp;display=swap">
+<link rel="preload" href="/fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 body{margin:0;background:#F3F1EE;color:#2A2522;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:#2A2522}a:hover{color:#6B6058}
@@ -50,6 +52,10 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
 @media (max-width:760px){.v-stage{gap:24px}.v-u{font-size:96px}.v-div{display:none}.v-rot{min-height:220px}}
 @media (min-width:1100px){.card-t{min-height:2.5em}}
 @media (prefers-reduced-motion:reduce){.v-slide,.v-bar::after{animation:none}.v-s1{opacity:1}.v-bars{display:none}}
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:13px 18px 13px 15px;background:#2A2522;color:#FFFFFF;text-decoration:none;border-radius:2px;font-size:15px;font-weight:500;box-shadow:0 8px 24px rgba(42,37,34,.22);transition:transform .2s ease}
+.wa-float:hover{color:#FFFFFF;transform:translateY(-2px)}
+@media (max-width:760px){.wa-float{right:16px;bottom:16px;padding:14px}.wa-float .wa-txt{display:none}}
+@media print{.wa-float{display:none}}
 </style>
 <style>
 *,*::before,*::after{box-sizing:border-box}
@@ -64,6 +70,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
 }
 
 .menu-btn{display:none}
+.wa-float{transition:transform .2s ease,opacity .25s ease}
+.wa-float.wa-hide{opacity:0;pointer-events:none;transform:translateY(8px)}
 @media (max-width:760px){
   header > div{gap:12px!important}
   header a[aria-label]{gap:12px!important}
@@ -79,17 +87,26 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LegalService","name":"Conrado Müller Advocacia Empresarial","url":"https://conradomuller.adv.br/","image":"https://conradomuller.adv.br/og.png","logo":"https://conradomuller.adv.br/apple-touch-icon.png","description":"Advocacia empresarial para empresários e pequenas e médias empresas: contratos, societário e governança, contencioso cível, trabalhista empresarial e assessoria jurídica contínua.","telephone":"+55 42 98441-4866","email":"contato@conradomuller.adv.br","address":{"@type":"PostalAddress","addressLocality":"Ponta Grossa","addressRegion":"PR","addressCountry":"BR"},"areaServed":{"@type":"Country","name":"Brasil"},"knowsAbout":["Direito Empresarial","Contratos","Direito Societário","Governança","Contencioso Cível","Direito do Trabalho"],"founder":{"@type":"Person","name":"Conrado Müller Milek","jobTitle":"Advogado","image":"https://conradomuller.adv.br/conrado-muller-milek.webp","sameAs":["https://www.linkedin.com/in/conradomilek"]},"sameAs":["https://www.instagram.com/conradomuller.adv","https://www.linkedin.com/in/conradomilek"]}
+{"@context":"https://schema.org","@type":"WebSite","name":"Conrado Müller Advocacia","alternateName":["Conrado Müller","Conrado Müller Advocacia Empresarial"],"url":"https://conradomuller.adv.br/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LegalService","name":"Conrado Müller Advocacia","url":"https://conradomuller.adv.br/","image":"https://conradomuller.adv.br/og.png","logo":"https://conradomuller.adv.br/apple-touch-icon.png","description":"Advocacia empresarial para empresários e pequenas e médias empresas: contratos, societário e governança, contencioso cível, trabalhista empresarial e assessoria jurídica contínua.","telephone":"+55 42 98441-4866","email":"contato@conradomuller.adv.br","address":{"@type":"PostalAddress","addressLocality":"Ponta Grossa","addressRegion":"PR","addressCountry":"BR"},"areaServed":{"@type":"Country","name":"Brasil"},"knowsAbout":["Direito Empresarial","Contratos","Direito Societário","Governança","Contencioso Cível","Direito do Trabalho"],"founder":{"@type":"Person","name":"Conrado Müller Milek","jobTitle":"Advogado","image":"https://conradomuller.adv.br/conrado-muller-milek.webp","sameAs":["https://www.linkedin.com/in/conradomilek"]},"sameAs":["https://www.instagram.com/conradomuller.adv","https://www.linkedin.com/in/conradomilek"]}
 </script>
 </head>
 <body>
 
 <div style="background: #F3F1EE; color: #2A2522; font-family: 'DM Sans', system-ui, sans-serif; width: 100%; min-width: 0">
 
+  <!-- WHATSAPP FLUTUANTE -->
+  <a class="wa-float" href="https://wa.me/5542984414866?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20conversar%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp" style="color: #FFFFFF">
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"></path><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" stroke-width="2.4"></path></svg>
+    <span class="wa-txt">WhatsApp</span>
+  </a>
+
   <!-- HEADER -->
   <header style="border-bottom: 1px solid #DDD5CB; padding: 0 24px; background: #F3F1EE">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0">
-      <a href="/" aria-label="Conrado Müller Advocacia Empresarial, início" style="text-decoration: none; display: flex; align-items: center; gap: 16px">
+      <a href="/" aria-label="Conrado Müller Advocacia, início" style="text-decoration: none; display: flex; align-items: center; gap: 16px">
         <span aria-hidden="true" style="font-family: 'Spectral SC', Georgia, serif; font-size: 46px; line-height: 1; font-weight: 600; color: #D2601A">Ü</span>
         <span aria-hidden="true" style="display: block; width: 1px; height: 40px; background: #D3CAC0"></span>
         <span aria-hidden="true" style="display: flex; flex-direction: column; gap: 6px">
@@ -122,9 +139,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
       <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 44px"><a href="#contato" style="text-decoration: none; background: rgb(42, 37, 34); color: rgb(255, 255, 255); padding: 16px 28px; border-radius: 2px; font-size: 16px; font-weight: 500">Agende uma conversa</a>
         <a href="#atuacao" style="text-decoration: none; border: 1px solid rgb(42, 37, 34); color: rgb(42, 37, 34); padding: 15px 27px; border-radius: 2px; font-size: 16px; font-weight: 500">Conheça nossas áreas de atuação</a>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px 48px; margin-top: 96px; padding-top: 24px; border-top: 1px solid #DDD5CB; font-size: 14px; color: #6B6058"><span>Ponta Grossa, Paraná · atendimento online em todo o Brasil</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; margin-top: 96px; padding-top: 24px; border-top: 1px solid #DDD5CB; font-size: 14px; color: #6B6058"><span>Conrado Müller Milek · OAB/PR 114.843</span>
         <span>Empresários e pequenas e médias empresas</span>
-        <span>OAB/PR 114.843</span>
+        <span>Ponta Grossa, Paraná · atendimento online em todo o Brasil</span>
       </div>
     </div>
   </section>
@@ -144,44 +161,34 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
         <p style="margin: 0">Dessa experiência vem a nossa forma de trabalhar: traduzir a questão jurídica para a linguagem de quem decide e construir soluções seguras e viáveis do ponto de vista do negócio, com rigor técnico e atenção ao que é aplicável na prática.</p>
       </div>
     </div>
+  </section>
 
-    <!-- VALORES EM ROTAÇÃO -->
-    <div style="max-width: 1200px; margin: 88px auto 0">
-      <span style="display: block; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: #6B6058; margin-bottom: 28px">Nossos valores</span>
-      <div class="v-stage" aria-hidden="true">
-        <span class="v-u" style="line-height: 1.25">Ü</span>
-        <span class="v-div"></span>
-        <div class="v-rot">
-          <div class="v-slide v-s1">
-            <span class="v-n">01</span>
-            <p class="v-pt">Decisão fundamentada</p>
-            <p class="v-sub">Análise dos fatos, das alternativas e das consequências de cada escolha.</p>
-          </div>
-          <div class="v-slide v-s2">
-            <span class="v-n">02</span>
-            <p class="v-pt">Visão estratégica</p>
-            <p class="v-sub">O jurídico lido em conjunto com o econômico e o operacional do negócio.</p>
-          </div>
-          <div class="v-slide v-s3">
-            <span class="v-n">03</span>
-            <p class="v-pt">Convicção técnica</p>
-            <p class="v-sub">Firmeza nas posições, com abertura para reconhecer riscos e rever estratégias.</p>
-          </div>
+  <!-- 02 QUEM CONDUZ -->
+  <section id="sobre" style="padding: 112px 24px; background: #F3F1EE">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 96px; align-items: center">
+      <img src="/conrado-muller-milek.webp" alt="Conrado Müller Milek, advogado" width="880" height="1100" loading="lazy" decoding="async" style="flex: 1 1 320px; min-width: 0; max-width: 440px; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; display: block; background: #DDD5CB">
+      <div style="flex: 1 1 440px; min-width: 0">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
+          <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
+          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">02 · Quem conduz</span>
         </div>
-      </div>
-      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px">
-        <div class="v-bars" aria-hidden="true"><span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span></div>
-        <a href="/valores" style="font-size: 16px; font-weight: 500; color: #2A2522">Conheça melhor cada valor</a>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0">Conrado Müller Milek</h2>
+        <p style="margin: 10px 0 32px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6058">Advogado · OAB/PR 114.843</p>
+        <div style="display: flex; flex-direction: column; gap: 18px; font-size: 18px; line-height: 1.7; color: #4A423D">
+          <div style="margin: 0"><p style="margin: 0">Advogado com atuação consultiva e contenciosa nas áreas de Direito Empresarial, Societário, Contratual e Trabalhista. Possui mais de 8 anos de experiência na assessoria jurídica interna de empresas de grande porte, atuando em ambientes de alta complexidade, com foco na prevenção de riscos, na estruturação de operações negociais, na gestão de passivos e na condução estratégica de litígios.</p></div>
+          
+          
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 02 ATUAÇÃO -->
-  <section id="atuacao" style="padding: 112px 24px; background: #F3F1EE">
+  <!-- 03 ATUAÇÃO -->
+  <section id="atuacao" style="padding: 112px 24px; background: #FFFFFF">
     <div style="max-width: 1200px; margin: 0 auto">
       <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
         <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
-        <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">02 · Atuação</span>
+        <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">03 · Atuação</span>
       </div>
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 56px">
         <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0; max-width: 620px">Atuação concentrada no que sustenta a rotina e o crescimento das empresas.</h2>
@@ -220,15 +227,67 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
     </div>
   </section>
 
-  <!-- 03 MÉTODO -->
+  <!-- QUANDO NOS PROCURAR -->
+  <section id="situacoes" aria-labelledby="situacoes-titulo" style="padding: 112px 24px; background: #F3F1EE">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 96px; align-items: flex-start">
+      <div style="flex: 1 1 300px; min-width: 0; max-width: 400px">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
+          <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
+          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Quando nos procurar</span>
+        </div>
+        <h2 id="situacoes-titulo" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0">Situações em que podemos ajudar</h2>
+        <p style="margin: 20px 0 32px; font-size: 17px; line-height: 1.65; color: #4A423D">Algumas das situações mais comuns que chegam ao escritório. Se a sua questão jurídica não estiver aqui, conte-nos mesmo assim.</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
+          <a href="#contato" style="text-decoration: none; background: #2A2522; color: #FFFFFF; padding: 15px 24px; border-radius: 2px; font-size: 16px; font-weight: 500">Descreva a sua situação</a>
+          <a href="https://wa.me/5542984414866?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20conversar%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 500; color: #2A2522">Pelo WhatsApp</a>
+        </div>
+      </div>
+      <ul style="flex: 2 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; column-gap: 40px">
+          <li style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid #DDD5CB">
+            <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058; padding-top: 3px; min-width: 22px">01</span>
+            <span style="font-size: 17px; line-height: 1.6; color: #2A2522">Vai receber um investidor ou um novo sócio e precisa rever o contrato social e as regras de entrada.</span>
+          </li>
+          <li style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid #DDD5CB">
+            <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058; padding-top: 3px; min-width: 22px">02</span>
+            <span style="font-size: 17px; line-height: 1.6; color: #2A2522">Um sócio quer sair, ou a relação entre os sócios precisa de regras mais claras.</span>
+          </li>
+          <li style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid #DDD5CB">
+            <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058; padding-top: 3px; min-width: 22px">03</span>
+            <span style="font-size: 17px; line-height: 1.6; color: #2A2522">Surgiu um impasse com cliente, fornecedor ou parceiro e é preciso decidir entre negociar ou litigar.</span>
+          </li>
+          <li style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid #DDD5CB">
+            <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058; padding-top: 3px; min-width: 22px">04</span>
+            <span style="font-size: 17px; line-height: 1.6; color: #2A2522">Contratos-padrão, rotinas ou fluxos internos geram riscos que ninguém revisou.</span>
+          </li>
+          <li style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid #DDD5CB">
+            <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058; padding-top: 3px; min-width: 22px">05</span>
+            <span style="font-size: 17px; line-height: 1.6; color: #2A2522">Vai assinar um contrato relevante e quer entender o que está assumindo.</span>
+          </li>
+          <li style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid #DDD5CB">
+            <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058; padding-top: 3px; min-width: 22px">06</span>
+            <span style="font-size: 17px; line-height: 1.6; color: #2A2522">Chegou uma notificação, citação ou intimação com prazo correndo.</span>
+          </li>
+          <li style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid #DDD5CB">
+            <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058; padding-top: 3px; min-width: 22px">07</span>
+            <span style="font-size: 17px; line-height: 1.6; color: #2A2522">Recebeu uma reclamatória trabalhista ou uma fiscalização.</span>
+          </li>
+          <li style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px; padding: 22px 0; border-top: 1px solid #DDD5CB">
+            <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: #6B6058; padding-top: 3px; min-width: 22px">08</span>
+            <span style="font-size: 17px; line-height: 1.6; color: #2A2522">Há clientes inadimplentes e é preciso definir a forma de cobrança.</span>
+          </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 04 MÉTODO -->
   <section id="metodo" style="padding: 112px 24px; background: #FFFFFF">
     <div style="max-width: 1200px; margin: 0 auto">
       <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
         <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
-        <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">03 · Método</span>
+        <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">04 · Método</span>
       </div>
       <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0; max-width: 720px">Cada etapa com um entregável definido.</h2>
-      <p style="font-size: 18px; line-height: 1.65; color: #4A423D; max-width: 620px; margin: 20px 0 64px">Você sabe o que será feito, em que prazo e a que custo, antes de o trabalho começar.</p>
+      <p style="font-size: 18px; line-height: 1.65; color: #4A423D; max-width: 750px; margin: 20px 0 64px; height: 56px">Cada etapa termina com algo concreto em mãos antes de seguir para a próxima.</p>
       <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 40px 32px">
         <li style="flex: 1 1 240px; min-width: 0; border-top: 1px solid #2A2522; padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
           <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 40px; line-height: 1">01</span>
@@ -251,52 +310,51 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
           <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #4A423D">Retorno no prazo combinado, registro de cada etapa e disponibilidade para os desdobramentos da decisão tomada.</p>
         </li>
       </ol>
-      <div style="margin-top: 72px; padding-top: 32px; border-top: 1px solid #DDD5CB; display: flex; flex-wrap: wrap; gap: 20px 56px; align-items: flex-start">
-        <h3 style="flex: 0 0 200px; margin: 0; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: #6B6058; padding-top: 4px">Nossos compromissos</h3>
-        <ul style="flex: 1 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 20px 32px; font-size: 16px; line-height: 1.6; color: #2A2522">
-          <li style="flex: 1 1 40%; min-width: 240px; padding-left: 16px; border-left: 1px solid #DDD5CB">Escopo e honorários definidos por escrito antes de começar.</li>
-          <li style="flex: 1 1 40%; min-width: 240px; padding-left: 16px; border-left: 1px solid #DDD5CB">Prazo de retorno informado em cada atendimento, e cumprido.</li>
-          <li style="flex: 1 1 40%; min-width: 240px; padding-left: 16px; border-left: 1px solid #DDD5CB">Pareceres com recomendação clara, não apenas com teses.</li>
-          <li style="flex: 1 1 40%; min-width: 240px; padding-left: 16px; border-left: 1px solid #DDD5CB">Sigilo e discrição como regra em todas as etapas.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
 
-  <!-- 04 SOBRE -->
-  <section id="sobre" style="padding: 112px 24px; background: #F3F1EE">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 96px; align-items: center">
-      <img src="/conrado-muller-milek.webp" alt="Conrado Müller Milek, advogado" width="880" height="1100" loading="lazy" decoding="async" style="flex: 1 1 320px; min-width: 0; max-width: 440px; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; display: block; background: #DDD5CB">
-      <div style="flex: 1 1 440px; min-width: 0">
-        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
-          <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
-          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">04 · Quem conduz</span>
+  <!-- 05 VALORES -->
+  <section id="valores" style="padding: 112px 24px; background: #F3F1EE">
+    <div style="max-width: 1200px; margin: 0 auto">
+      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 40px">
+        <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
+        <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">05 · Valores</span>
+      </div>
+      <div class="v-stage" aria-hidden="true">
+        <span class="v-u" style="line-height: 1.25">Ü</span>
+        <span class="v-div"></span>
+        <div class="v-rot">
+          <div class="v-slide v-s1">
+            <span class="v-n">01</span>
+            <p class="v-pt">Decisão fundamentada</p>
+            <p class="v-sub">Análise dos fatos, das alternativas e das consequências de cada escolha.</p>
+          </div>
+          <div class="v-slide v-s2">
+            <span class="v-n">02</span>
+            <p class="v-pt">Visão estratégica</p>
+            <p class="v-sub">O jurídico lido em conjunto com o econômico e o operacional do negócio.</p>
+          </div>
+          <div class="v-slide v-s3">
+            <span class="v-n">03</span>
+            <p class="v-pt">Convicção técnica</p>
+            <p class="v-sub">Firmeza nas posições, com abertura para reconhecer riscos e rever estratégias.</p>
+          </div>
         </div>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0">Conrado Müller Milek</h2>
-        <p style="margin: 10px 0 32px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B6058">Advogado · OAB/PR 114.843</p>
-        <div style="display: flex; flex-direction: column; gap: 18px; font-size: 18px; line-height: 1.7; color: #4A423D">
-          <div style="margin: 0"><p style="margin: 0">Advogado com atuação consultiva e contenciosa nas áreas de Direito Empresarial, Societário, Contratual e Trabalhista. Possui mais de 8 anos de experiência na assessoria jurídica interna de empresas de grande porte, atuando em ambientes de alta complexidade, com foco na prevenção de riscos, na estruturação de operações negociais, na gestão de passivos e na condução estratégica de litígios.</p></div>
-          
-          
-        </div>
-        <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #DDD5CB; display: flex; flex-direction: column; gap: 14px">
-          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Formação</span>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.55; color: #4A423D">
-            <li>Bacharel em Direito pela Universidade Estadual de Ponta Grossa</li>
-            <li>Pós-graduando em Direito Material, Processual e Digital do Trabalho pela Escola da Magistratura do Trabalho do Paraná</li>
-          </ul>
-        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px">
+        <div class="v-bars" aria-hidden="true"><span class="v-bar"></span><span class="v-bar"></span><span class="v-bar"></span></div>
+        <a href="/valores" style="font-size: 16px; font-weight: 500; color: #2A2522">Conheça melhor cada valor</a>
       </div>
     </div>
   </section>
 
-  <!-- 05 CONTEÚDOS -->
+  <!-- 06 CONTEÚDOS -->
   <section id="conteudos" style="padding: 112px 24px; background: #FFFFFF">
     <div style="max-width: 1200px; margin: 0 auto">
       <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
         <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
-        <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">05 · Conteúdos</span>
+        <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">06 · Conteúdos</span>
       </div>
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
         <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0; max-width: 640px">Análises práticas sobre o que afeta a dinâmica dos seus negócios.</h2>
@@ -322,13 +380,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
     </div>
   </section>
 
-  <!-- 06 DÚVIDAS -->
+  <!-- 07 DÚVIDAS -->
   <section id="duvidas" style="padding: 112px 24px; background: #F3F1EE">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 96px">
       <div style="flex: 1 1 280px; min-width: 0">
         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px">
           <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
-          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">06 · Dúvidas</span>
+          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">07 · Dúvidas</span>
         </div>
         <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.15; margin: 0">Dúvidas frequentes</h2>
         <p style="margin: 20px 0 28px; font-size: 17px; line-height: 1.65; color: #4A423D; max-width: 340px">As perguntas mais comuns antes do primeiro contato. Dúvidas sobre contratos, sociedade e questões trabalhistas estão na página completa.</p>
@@ -341,15 +399,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
         </details>
         <details style="border-bottom: 1px solid #DDD5CB; padding: 24px 0">
           <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 19px; font-weight: 500">Como são definidos os honorários?<span class="faq-plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; transition: transform .2s">+</span></summary>
-          <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #4A423D; max-width: 680px">Conforme a complexidade e o escopo de cada demanda, observada a tabela de honorários da OAB/PR, e sempre apresentados por escrito antes do início do trabalho. Para acompanhamento contínuo, há a modalidade de valor mensal.</p>
+          <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #4A423D; max-width: 680px">Conforme a complexidade e o escopo de cada demanda. Constam da proposta, apresentada antes de qualquer compromisso de sua parte.</p>
         </details>
         <details style="border-bottom: 1px solid #DDD5CB; padding: 24px 0">
-          <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 19px; font-weight: 500">A primeira conversa tem custo?<span class="faq-plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; transition: transform .2s">+</span></summary>
-          <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #4A423D; max-width: 680px">A primeira conversa serve para entender a demanda e indicar o caminho adequado. As condições são informadas no agendamento, antes de qualquer compromisso de sua parte.</p>
+          <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 19px; font-weight: 500">Como funciona a primeira conversa?<span class="faq-plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; transition: transform .2s">+</span></summary>
+          <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #4A423D; max-width: 680px">É uma conversa para entender o negócio, a demanda e o que está em jogo, com base nos documentos disponíveis. A partir dela, indicamos o caminho adequado e, se fizer sentido seguir, apresentamos uma proposta.</p>
         </details>
         <details style="border-bottom: 1px solid #DDD5CB; padding: 24px 0">
           <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 19px; font-weight: 500">Em quanto tempo recebo retorno?<span class="faq-plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; transition: transform .2s">+</span></summary>
-          <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #4A423D; max-width: 680px">O prazo de retorno é informado no primeiro contato, de acordo com a natureza da demanda. Se houver prazo judicial ou administrativo em curso, informe na mensagem para que a análise seja priorizada.</p>
+          <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #4A423D; max-width: 680px">O primeiro retorno é feito em até 1 dia útil após o contato. Se houver prazo judicial ou administrativo em curso, informe na mensagem para que a análise seja priorizada.</p>
         </details>
         <details style="border-bottom: 1px solid #DDD5CB; padding: 24px 0">
           <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 19px; font-weight: 500">O que levar para a primeira conversa?<span class="faq-plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; transition: transform .2s">+</span></summary>
@@ -357,7 +415,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
         </details>
         <details style="border-bottom: 1px solid #DDD5CB; padding: 24px 0">
           <summary style="display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 19px; font-weight: 500">Vocês atendem empresas de outras cidades?<span class="faq-plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; transition: transform .2s">+</span></summary>
-          <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #4A423D; max-width: 680px">Sim. O escritório tem sede em Ponta Grossa, Paraná e atende empresas de todo o Brasil de forma online. Em processos judiciais, a atuação considera a jurisdição do caso e, quando necessário, é feita em conjunto com colegas parceiros.</p>
+          <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.7; color: #4A423D; max-width: 680px">Sim. O escritório tem sede em Ponta Grossa, Paraná, e atende empresas de todo o Brasil de forma online. Em processos judiciais, a atuação considera a jurisdição do caso e, quando necessário, é feita em conjunto com colegas parceiros.</p>
         </details>
       </div>
     </div>
@@ -372,10 +430,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
           <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Contato</span>
         </div>
         <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.12; margin: 0">Vamos conversar sobre a sua empresa.</h2>
-        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Conte-nos brevemente a situação. O retorno é feito no prazo informado, com a indicação do caminho mais adequado.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Conte-nos brevemente a situação. O retorno é feito em até 1 dia útil, com a indicação do caminho mais adequado.</p>
         <dl style="margin: 24px 0 0; display: flex; flex-direction: column; gap: 18px; font-size: 16px">
           <div><dt style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B0A69B">E-mail</dt><dd style="margin: 6px 0 0"><a href="mailto:contato@conradomuller.adv.br" style="color: #F3F1EE">contato@conradomuller.adv.br</a></dd></div>
-          <div><dt style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B0A69B">WhatsApp</dt><dd style="margin: 6px 0 0"><a href="https://wa.me/5542984414866" target="_blank" rel="noopener" style="color: #F3F1EE">(42) 98441-4866</a></dd></div>
+          <div><dt style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B0A69B">WhatsApp</dt><dd style="margin: 6px 0 0"><a href="https://wa.me/5542984414866?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20conversar%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" style="color: #F3F1EE">(42) 98441-4866</a></dd></div>
           <div><dt style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B0A69B">Atendimento</dt><dd style="margin: 6px 0 0">Sede em Ponta Grossa, Paraná. Atendimento online em todo o Brasil, com reuniões por videoconferência.</dd></div>
         </dl>
       </div>
@@ -426,7 +484,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
     <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #403833; padding: 48px 0 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
       <div style="display: flex; gap: 20px; align-items: flex-start; flex: 1 1 360px; min-width: 0">
         <span aria-hidden="true" style="font-family: 'Spectral SC', Georgia, serif; font-size: 44px; line-height: 1; font-weight: 600; color: #D2601A">Ü</span>
-        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.6"><span style="color: rgb(243, 241, 238)">Conrado Müller Advocacia Empresarial</span>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.6"><span style="color: rgb(243, 241, 238)">Conrado Müller Advocacia</span>
           <span>Sociedade Individual de Advocacia OAB/PR 114.843</span>
           <span>Ponta Grossa, Paraná · Atendimento online em todo o Brasil</span>
         </div>
@@ -440,13 +498,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
     </div>
     <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #403833; padding: 24px 0 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 13px; line-height: 1.6">
       <p style="margin: 0; max-width: 720px">Não solicitamos pagamentos, dados bancários ou senhas por WhatsApp ou redes sociais. Em caso de dúvida, confirme a autenticidade da mensagem pelos canais oficiais do escritório.</p>
-      <span>© 2026 Conrado Müller Advocacia Empresarial</span>
+      <span>© 2026 Conrado Müller Advocacia</span>
     </div>
   </footer>
 
 </div>
 
 <script>
+(function(){
+  var w=document.querySelector('.wa-float'); if(!w||!('IntersectionObserver' in window)) return;
+  var t=[document.getElementById('contato'),document.querySelector('footer')].filter(Boolean), vis=new Set();
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting?vis.add(e.target):vis.delete(e.target); }); w.classList.toggle('wa-hide',vis.size>0); },{threshold:0.05});
+  t.forEach(function(el){ io.observe(el); });
+})();
 (function(){
   var b=document.querySelector('.menu-btn'), n=document.getElementById('nav-principal'); if(!b||!n) return;
   function set(o){ n.classList.toggle('open',o); b.setAttribute('aria-expanded',o?'true':'false'); b.textContent=o?'Fechar':'Menu'; }
@@ -465,7 +529,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
     fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(function(r){ if(!r.ok) throw 0;
         f.reset(); s.style.color='#F3F1EE';
-        s.textContent='Mensagem enviada. O retorno será feito no prazo informado.'; })
+        s.textContent='Mensagem enviada. O retorno será feito em até 1 dia útil.'; })
       .catch(function(){ s.style.color='#F3F1EE';
         s.innerHTML='Não foi possível enviar agora. Escreva para <a href="mailto:contato@conradomuller.adv.br" style="color:#F3F1EE">contato@conradomuller.adv.br</a> ou pelo WhatsApp.'; })
       .then(function(){ b.disabled=false; b.textContent='Enviar mensagem'; });
