@@ -35,7 +35,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
 .hero-in-2{animation-delay:.35s}.hero-in-3{animation-delay:1.05s}
 @media (prefers-reduced-motion:reduce){.hero-in{opacity:1;animation:none}}
 .v-stage{display:flex;flex-wrap:wrap;align-items:stretch;gap:32px 64px;padding:0 0 40px}
-.v-u{font-family:'Spectral SC',Georgia,serif;font-weight:600;font-size:clamp(110px,10vw,148px);line-height:.82;color:#D2601A;align-self:center}
+.v-u{display:block;height:clamp(99px,9vw,133px);width:auto;align-self:center}
 .v-div{width:1px;background:#D3CAC0}
 .v-rot{position:relative;flex:1 1 420px;min-width:0;min-height:200px}
 .v-slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:18px;opacity:0;animation:vCycle 21s cubic-bezier(.33,0,.2,1) infinite both}
@@ -49,7 +49,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
 .v-bar:nth-child(2)::after{animation-delay:7s}.v-bar:nth-child(3)::after{animation-delay:14s}
 @keyframes vCycle{0%{opacity:0;transform:translateY(6px)}6%{opacity:1;transform:none}29%{opacity:1;transform:none}33.33%{opacity:0;transform:translateY(-4px)}100%{opacity:0}}
 @keyframes vBar{0%{transform:scaleX(0)}33.33%{transform:scaleX(1)}33.34%,100%{transform:scaleX(0)}}
-@media (max-width:760px){.v-stage{gap:24px}.v-u{font-size:96px}.v-div{display:none}.v-rot{min-height:220px}}
+@media (max-width:760px){.v-stage{gap:24px}.v-u{height:86px}.v-div{display:none}.v-rot{min-height:220px}}
 @media (min-width:1100px){.card-t{min-height:2.5em}}
 @media (prefers-reduced-motion:reduce){.v-slide,.v-bar::after{animation:none}.v-s1{opacity:1}.v-bars{display:none}}
 .wa-float{position:fixed;right:24px;bottom:24px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:13px 18px 13px 15px;background:#2A2522;color:#FFFFFF;text-decoration:none;border-radius:2px;font-size:15px;font-weight:500;box-shadow:0 8px 24px rgba(42,37,34,.22);transition:transform .2s ease}
@@ -75,10 +75,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
 @media (max-width:760px){
   header > div{gap:12px!important}
   header a[aria-label]{gap:12px!important}
-  header a[aria-label] > span:first-child{font-size:38px!important}
-  header a[aria-label] > span:nth-child(2){height:32px!important}
-  header a[aria-label] > span:nth-child(3) > span:first-child{font-size:19px!important}
-  header a[aria-label] > span:nth-child(3) > span:last-child{font-size:9px!important;letter-spacing:.2em!important}
+  header a[aria-label] .logo-h{height:44px!important;width:auto!important}
   .menu-btn{display:inline-flex;align-items:center;font:inherit;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid #2A2522;color:#2A2522;padding:9px 12px;border-radius:2px;cursor:pointer}
   #nav-principal{display:none!important;width:100%;flex-direction:column;align-items:stretch!important;gap:0!important;padding:4px 0 8px}
   #nav-principal.open{display:flex!important}
@@ -90,7 +87,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
 {"@context":"https://schema.org","@type":"WebSite","name":"Conrado Müller Advocacia","alternateName":["Conrado Müller","Conrado Müller Advocacia Empresarial"],"url":"https://conradomuller.adv.br/"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LegalService","name":"Conrado Müller Advocacia","url":"https://conradomuller.adv.br/","image":"https://conradomuller.adv.br/og.png","logo":"https://conradomuller.adv.br/apple-touch-icon.png","description":"Advocacia empresarial para empresários e pequenas e médias empresas: contratos, societário e governança, contencioso cível, trabalhista empresarial e assessoria jurídica contínua.","telephone":"+55 42 98441-4866","email":"contato@conradomuller.adv.br","address":{"@type":"PostalAddress","addressLocality":"Ponta Grossa","addressRegion":"PR","addressCountry":"BR"},"areaServed":{"@type":"Country","name":"Brasil"},"knowsAbout":["Direito Empresarial","Contratos","Direito Societário","Governança","Contencioso Cível","Direito do Trabalho"],"founder":{"@type":"Person","name":"Conrado Müller Milek","jobTitle":"Advogado","image":"https://conradomuller.adv.br/conrado-muller-milek.webp","sameAs":["https://www.linkedin.com/in/conradomilek"]},"sameAs":["https://www.instagram.com/conradomuller.adv","https://www.linkedin.com/in/conradomilek"]}
+{"@context":"https://schema.org","@type":"LegalService","name":"Conrado Müller Advocacia","url":"https://conradomuller.adv.br/","image":"https://conradomuller.adv.br/og.png","logo":"https://conradomuller.adv.br/icon-512.png","description":"Advocacia empresarial para empresários e pequenas e médias empresas: contratos, societário e governança, contencioso cível, trabalhista empresarial e assessoria jurídica contínua.","telephone":"+55 42 98441-4866","email":"contato@conradomuller.adv.br","address":{"@type":"PostalAddress","addressLocality":"Ponta Grossa","addressRegion":"PR","addressCountry":"BR"},"areaServed":{"@type":"Country","name":"Brasil"},"knowsAbout":["Direito Empresarial","Contratos","Direito Societário","Governança","Contencioso Cível","Direito do Trabalho"],"founder":{"@type":"Person","name":"Conrado Müller Milek","jobTitle":"Advogado","image":"https://conradomuller.adv.br/conrado-muller-milek.webp","sameAs":["https://www.linkedin.com/in/conradomilek"]},"sameAs":["https://www.instagram.com/conradomuller.adv","https://www.linkedin.com/in/conradomilek"]}
 </script>
 </head>
 <body>
@@ -106,14 +103,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
   <!-- HEADER -->
   <header style="border-bottom: 1px solid #DDD5CB; padding: 0 24px; background: #F3F1EE">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0">
-      <a href="/" aria-label="Conrado Müller Advocacia, início" style="text-decoration: none; display: flex; align-items: center; gap: 16px">
-        <span aria-hidden="true" style="font-family: 'Spectral SC', Georgia, serif; font-size: 46px; line-height: 1; font-weight: 600; color: #D2601A">Ü</span>
-        <span aria-hidden="true" style="display: block; width: 1px; height: 40px; background: #D3CAC0"></span>
-        <span aria-hidden="true" style="display: flex; flex-direction: column; gap: 6px">
-          <span style="font-family: 'Spectral SC', Georgia, serif; font-size: 24px; font-weight: 600; letter-spacing: 0.04em; color: #2A2522; line-height: 1">Conrado M<span style="color: #D2601A">ü</span>ller</span>
-          <span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #6B6058">Advocacia Empresarial</span>
-        </span>
-      </a>
+      <a href="/" aria-label="Conrado Müller Advocacia, início" style="text-decoration: none; display: flex; align-items: center; gap: 16px"><img class="logo-h" src="/logo-horizontal-compacto.svg" alt="" width="275" height="53" style="display:block;height:53px;width:auto"></a>
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <input type="hidden" name="_subject" value="Novo contato pelo site">
         <button type="submit" class="menu-btn" aria-expanded="false" aria-controls="nav-principal">Menu</button>
@@ -322,7 +312,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
         <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">05 · Valores</span>
       </div>
       <div class="v-stage" aria-hidden="true">
-        <span class="v-u" style="line-height: 1.25">Ü</span>
+        <img class="v-u" src="/logo-ue.svg" alt="" width="106" height="133">
         <span class="v-div"></span>
         <div class="v-rot">
           <div class="v-slide v-s1">
@@ -483,7 +473,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
   <footer style="background: #2A2522; color: #B0A69B; padding: 0 24px">
     <div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid #403833; padding: 48px 0 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
       <div style="display: flex; gap: 20px; align-items: flex-start; flex: 1 1 360px; min-width: 0">
-        <span aria-hidden="true" style="font-family: 'Spectral SC', Georgia, serif; font-size: 44px; line-height: 1; font-weight: 600; color: #D2601A">Ü</span>
+        <img src="/logo-ue.svg" alt="" aria-hidden="true" width="32" height="40" style="display:block;flex:0 0 auto;height:40px;width:auto;margin-top:2px">
         <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.6"><span style="color: rgb(243, 241, 238)">Conrado Müller Advocacia</span>
           <span>Sociedade Individual de Advocacia OAB/PR 114.843</span>
           <span>Ponta Grossa, Paraná · Atendimento online em todo o Brasil</span>
