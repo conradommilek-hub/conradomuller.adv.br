@@ -249,31 +249,5 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
   n.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
 })();
 </script>
-<script>
-/* Cada faixa de cor de fundo ocupa, no mínimo, a altura da tela; faixas maiores ficam como estão. */
-(function(){
-  var root=document.querySelector('header') && document.querySelector('header').parentElement; if(!root) return;
-  function bg(el){ var c=getComputedStyle(el).backgroundColor; return (c==='rgba(0, 0, 0, 0)'||c==='transparent') ? getComputedStyle(root).backgroundColor : c; }
-  var lastW=0;
-  function run(force){
-    if(!force && window.innerWidth===lastW) return; lastW=window.innerWidth;
-    var els=[].filter.call(root.children,function(e){ return /^(HEADER|SECTION|FOOTER)$/.test(e.tagName); });
-    els.forEach(function(e){ if(e.dataset.fit){ e.style.minHeight=''; e.style.display=''; e.style.flexDirection=''; e.style.justifyContent=''; delete e.dataset.fit; } });
-    var vh=window.innerHeight, groups=[], cur=null;
-    els.forEach(function(e){ var c=bg(e); if(!cur||cur.c!==c){ cur={c:c,els:[]}; groups.push(cur); } cur.els.push(e); });
-    groups.forEach(function(g){
-      var h=g.els.reduce(function(s,e){ return s+e.getBoundingClientRect().height; },0);
-      if(h>=vh) return;
-      var main=g.els.filter(function(e){ return e.tagName==='SECTION'; }).sort(function(a,b){ return b.offsetHeight-a.offsetHeight; })[0] || g.els[g.els.length-1];
-      main.dataset.fit='1'; main.style.minHeight=(main.getBoundingClientRect().height+(vh-h))+'px';
-      main.style.display='flex'; main.style.flexDirection='column'; main.style.justifyContent='center';
-    });
-  }
-  run(true);
-  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ run(true); });
-  window.addEventListener('load',function(){ run(true); });
-  window.addEventListener('resize',function(){ run(false); });
-})();
-</script>
 </body>
 </html>

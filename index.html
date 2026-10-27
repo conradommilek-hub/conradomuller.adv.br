@@ -113,7 +113,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
       <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 44px"><a href="#contato" style="text-decoration: none; background: rgb(42, 37, 34); color: rgb(255, 255, 255); padding: 16px 28px; border-radius: 2px; font-size: 16px; font-weight: 500">Agende uma conversa</a>
         <a href="/atuacao" style="text-decoration: none; border: 1px solid rgb(42, 37, 34); color: rgb(42, 37, 34); padding: 15px 27px; border-radius: 2px; font-size: 16px; font-weight: 500">Conheça nossas áreas de atuação</a>
       </div>
-      
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; margin-top: 96px; padding-top: 24px; border-top: 1px solid #DDD5CB; font-size: 14px; color: #6B6058"><span>Ponta Grossa, Paraná · atendimento online em todo o Brasil</span></div>
     </div>
   </section>
 
@@ -458,7 +458,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
 })();
 </script>
 <script>
-/* Cada faixa de cor de fundo ocupa, no mínimo, a altura da tela; faixas maiores ficam como estão. */
+/* Hero (primeira faixa de cor, com o cabeçalho) ocupa, no mínimo, a altura da tela. */
 (function(){
   var root=document.querySelector('header') && document.querySelector('header').parentElement; if(!root) return;
   function bg(el){ var c=getComputedStyle(el).backgroundColor; return (c==='rgba(0, 0, 0, 0)'||c==='transparent') ? getComputedStyle(root).backgroundColor : c; }
@@ -469,7 +469,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #D2
     els.forEach(function(e){ if(e.dataset.fit){ e.style.minHeight=''; e.style.display=''; e.style.flexDirection=''; e.style.justifyContent=''; delete e.dataset.fit; } });
     var vh=window.innerHeight, groups=[], cur=null;
     els.forEach(function(e){ var c=bg(e); if(!cur||cur.c!==c){ cur={c:c,els:[]}; groups.push(cur); } cur.els.push(e); });
-    groups.forEach(function(g){
+    groups.slice(0,1).forEach(function(g){
       var h=g.els.reduce(function(s,e){ return s+e.getBoundingClientRect().height; },0);
       if(h>=vh) return;
       var main=g.els.filter(function(e){ return e.tagName==='SECTION'; }).sort(function(a,b){ return b.offsetHeight-a.offsetHeight; })[0] || g.els[g.els.length-1];
