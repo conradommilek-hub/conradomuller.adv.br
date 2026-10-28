@@ -2,8 +2,9 @@ Site Conrado Müller Advocacia — pacote para publicação
 Gerado em 28 de outubro de 2026, a partir da versão atual do canvas "Site Conrado Müller".
 
 COMO PUBLICAR (GitHub Pages)
-1. No repositório do site, substitua os arquivos existentes pelo conteúdo desta pasta
-   (todos os .html, a pasta img/ e o arquivo CNAME).
+1. No repositório do site, apague as versões antigas e envie todos os arquivos desta pasta
+   para a raiz do repositório: os .html, as cinco imagens .jpg e o arquivo CNAME.
+   Não há subpastas: todos os arquivos ficam no mesmo nível do index.html.
 2. Faça o commit e o push para a branch configurada no GitHub Pages.
 3. Aguarde alguns minutos e confira em https://conradomuller.adv.br
 
