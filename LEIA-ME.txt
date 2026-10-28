@@ -1,0 +1,28 @@
+Site Conrado Müller Advocacia — pacote para publicação
+Gerado em 28 de outubro de 2026, a partir da versão atual do canvas "Site Conrado Müller".
+
+COMO PUBLICAR (GitHub Pages)
+1. No repositório do site, substitua os arquivos existentes pelo conteúdo desta pasta
+   (todos os .html, a pasta img/ e o arquivo CNAME).
+2. Faça o commit e o push para a branch configurada no GitHub Pages.
+3. Aguarde alguns minutos e confira em https://conradomuller.adv.br
+
+PÁGINAS
+index.html .................................. Início
+escritorio.html / valores.html .............. O Escritório e Valores
+atuacao.html / metodo.html .................. Atuação e Método
+conteudos.html .............................. Conteúdos
+artigo-fim-escala-6x1.html .................. Artigo (28/10/2026)
+artigo-mutuo-conversivel.html ............... Artigo (25/10/2026)
+artigo-acordo-de-socios.html ................ Artigo (22/10/2026)
+artigo-nr1-riscos-psicossociais.html ........ Artigo (20/10/2026)
+duvidas.html ................................ Dúvidas frequentes
+privacidade.html / termos.html .............. Política de Privacidade e Termos de Uso
+
+PONTOS DE ATENÇÃO
+- O formulário de contato da página inicial não envia mensagens: o botão "Enviar mensagem"
+  não está ligado a nenhum serviço. Para funcionar no GitHub Pages, é preciso conectá-lo a um
+  serviço de formulários (por exemplo, Formspree) ou removê-lo e manter WhatsApp e e-mail.
+- O arquivo CNAME aponta para conradomuller.adv.br. Se o repositório já tiver um CNAME com
+  outro endereço, mantenha o que estiver correto.
+- O modelo de artigo (página de rascunho do canvas) não foi incluído.
