@@ -50,7 +50,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
         <a href="metodo.html" style="text-decoration: none">Método</a>
         <a href="conteudos.html" style="text-decoration: none">Conteúdos</a>
         <a href="duvidas.html" style="text-decoration: none">Dúvidas</a>
-        <a href="#contato" style="text-decoration: none; background: rgb(42, 37, 34); color: rgb(255, 255, 255); padding: 12px 20px; border-radius: 2px; font-weight: 500">Agende uma conversa</a>
+        <a href="agendar.html" style="text-decoration: none; background: rgb(42, 37, 34); color: rgb(255, 255, 255); padding: 12px 20px; border-radius: 2px; font-weight: 500">Agende uma conversa</a>
       </nav>
     </div>
   </header>
@@ -64,7 +64,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
       </div>
       <h1 class="hero-in hero-in-2" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(42px, 6vw, 76px); line-height: 1.08; letter-spacing: -0.01em; margin: 0; max-width: 940px">Rigor jurídico a serviço de <em style="font-style: italic">quem decide.</em></h1>
       <p class="hero-in hero-in-3" style="font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; color: #4A423D; max-width: 606px; margin: 32px 0 0; text-align: start">Assessoria jurídica estratégica para empresários, sócios e executivos que conduzem negócios e tomam decisões.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 44px"><a href="#contato" style="text-decoration: none; background: rgb(42, 37, 34); color: rgb(255, 255, 255); padding: 16px 28px; border-radius: 2px; font-size: 16px; font-weight: 500">Agende uma conversa</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 44px"><a href="agendar.html" style="text-decoration: none; background: rgb(42, 37, 34); color: rgb(255, 255, 255); padding: 16px 28px; border-radius: 2px; font-size: 16px; font-weight: 500">Agende uma conversa</a>
         <a href="atuacao.html" style="text-decoration: none; border: 1px solid rgb(42, 37, 34); color: rgb(42, 37, 34); padding: 15px 27px; border-radius: 2px; font-size: 16px; font-weight: 500">Conheça nossas áreas de atuação</a>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; margin-top: 96px; padding-top: 24px; border-top: 1px solid #DDD5CB; font-size: 14px; color: #6B6058"><span>Ponta Grossa, Paraná · atendimento online em todo o Brasil</span></div>
@@ -287,51 +287,42 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
       <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
         <div style="display: flex; align-items: center; gap: 14px">
           <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
-          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Contato</span>
+          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Dúvidas pontuais</span>
         </div>
         <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.12; margin: 0">Vamos conversar sobre a sua empresa.</h2>
-        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Conte-nos brevemente a situação. O retorno é feito em até 1 dia útil, com a indicação do caminho mais adequado.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Se a sua dúvida é pontual, escreva por aqui. A resposta chega por e-mail em até 1 dia útil.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Para tratar da sua demanda com calma, o melhor caminho é <a href="agendar.html" style="color: #F3F1EE; text-underline-offset: 3px">agendar uma conversa</a>.</p>
         <dl style="margin: 24px 0 0; display: flex; flex-direction: column; gap: 18px; font-size: 16px">
           <div><dt style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B0A69B">E-mail</dt><dd style="margin: 6px 0 0"><a href="mailto:contato@conradomuller.adv.br" style="color: #F3F1EE">contato@conradomuller.adv.br</a></dd></div>
           <div><dt style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B0A69B">WhatsApp</dt><dd style="margin: 6px 0 0"><a href="https://wa.me/5542984414866?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20conversar%20com%20o%20escrit%C3%B3rio." style="color: #F3F1EE">(42) 98441-4866</a></dd></div>
           <div><dt style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B0A69B">Atendimento</dt><dd style="margin: 6px 0 0">Sede em Ponta Grossa, Paraná. Atendimento online em todo o Brasil, com reuniões por videoconferência.</dd></div>
         </dl>
       </div>
-      <form style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <form id="form-duvidas" novalidate style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
         <div style="display: flex; flex-wrap: wrap; gap: 20px">
           <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Nome
-            <input type="text" name="nome" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
+            <input type="text" name="nome" autocomplete="name" maxlength="120" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
           </label>
-          <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Empresa
-            <input type="text" name="empresa" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
-          </label>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px">
           <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">E-mail
-            <input type="email" name="email" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
-          </label>
-          <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Telefone
-            <input type="tel" name="telefone" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
+            <input type="email" name="email" autocomplete="email" maxlength="160" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
           </label>
         </div>
-        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Assunto
-          <select name="assunto" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
-            <option>Contratos</option>
-            <option>Societário e Governança</option>
-            <option>Assessoria Jurídica Contínua</option>
-            <option>Contencioso Cível</option>
-            <option>Trabalhista Empresarial</option>
-            <option>Outro assunto</option>
-          </select>
+        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Empresa (opcional)
+          <input type="text" name="empresa" autocomplete="organization" maxlength="120" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
         </label>
-        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Mensagem
-          <textarea name="mensagem" rows="5" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px; resize: vertical"></textarea>
+        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Sua dúvida
+          <textarea name="mensagem" rows="5" maxlength="3000" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px; resize: vertical"></textarea>
+          <span style="font-size: 13px; color: #B0A69B">Não inclua documentos nem informações sigilosas.</span>
         </label>
+        <div aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden">
+          <label>Site <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
         <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #CFC6BC">
-          <input type="checkbox" name="lgpd" style="margin-top: 3px; width: 18px; height: 18px; accent-color: #D2601A">
-          Li e aceito a Política de Privacidade e autorizo o uso dos meus dados para retorno deste contato.
+          <input type="checkbox" name="lgpd" style="margin-top: 3px; width: 18px; height: 18px; accent-color: #D2601A; flex: none">
+          <span>Li e aceito a <a href="privacidade.html" style="color: #F3F1EE">Política de Privacidade</a> e autorizo o uso dos meus dados para retorno deste contato.</span>
         </label>
-        <button type="button" style="align-self: flex-start; font: inherit; font-size: 16px; font-weight: 500; background: #F3F1EE; color: #2A2522; border: none; padding: 16px 32px; border-radius: 2px; cursor: pointer; min-height: 48px">Enviar mensagem</button>
+        <p id="duvidas-status" role="status" aria-live="polite" style="margin: 0; font-size: 15px; line-height: 1.6; color: #F3F1EE"></p>
+        <button type="submit" style="align-self: flex-start; font: inherit; font-size: 16px; font-weight: 500; background: #F3F1EE; color: #2A2522; border: none; padding: 16px 32px; border-radius: 2px; cursor: pointer; min-height: 48px">Enviar mensagem</button>
       </form>
     </div>
   </section>
@@ -342,8 +333,8 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
       <div style="display: flex; gap: 20px; align-items: flex-start; flex: 1 1 360px; min-width: 0">
         <span aria-hidden="true" style="font-family: 'Spectral SC', Georgia, serif; font-size: 44px; line-height: 1; font-weight: 600; color: #D2601A">Ü</span>
         <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.6"><span style="color: rgb(243, 241, 238)">Conrado Müller Advocacia</span>
-          <span>Sociedade Individual de Advocacia OAB/PR 2625228 · CNPJ 69.864.166/0001-52</span>
-          <span>Responsável técnico: Conrado Müller Milek, Adv. OAB/PR 114.843</span>
+          <span>Sociedade Individual de Advocacia OAB/PR 2625228</span>
+          <span>CNPJ 69.864.166/0001-52</span>
           <span>Ponta Grossa, Paraná · Atendimento online em todo o Brasil</span>
         </div>
       </div>
@@ -361,5 +352,42 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
   </footer>
 
 </div>
+<script>
+(function () {
+  // Mesmo endereço do App da Web usado na página de agendamento.
+  var URL_AGENDA = 'https://script.google.com/macros/s/AKfycbxvhlsMMM3wPtXZ0IPmkETFXVDxctrOrxM6di2KR4VPu4gv5iJryVw1m59y0PwgWZWS/exec';
+  var form = document.getElementById('form-duvidas');
+  if (!form) return;
+  var status = document.getElementById('duvidas-status');
+  var botao = form.querySelector('button[type=submit]');
+  function avisar(t) { status.textContent = t; }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var d = {
+      tipo: 'mensagem',
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim(),
+      empresa: form.empresa.value.trim(),
+      mensagem: form.mensagem.value.trim(),
+      consentimento: form.lgpd.checked,
+      website: form.website.value
+    };
+    if (d.nome.length < 2) { avisar('Informe seu nome.'); form.nome.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) { avisar('Informe um e-mail válido para a resposta.'); form.email.focus(); return; }
+    if (d.mensagem.length < 5) { avisar('Escreva brevemente a sua dúvida.'); form.mensagem.focus(); return; }
+    if (!d.consentimento) { avisar('Para enviar, é preciso aceitar a Política de Privacidade.'); form.lgpd.focus(); return; }
+    botao.disabled = true; botao.textContent = 'Enviando…'; avisar('');
+    fetch(URL_AGENDA, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json(); })
+      .then(function (r) {
+        if (r.ok) { form.reset(); avisar('Mensagem enviada. A resposta chega por e-mail em até 1 dia útil.'); }
+        else if (r.erro === 'limite_email') avisar('Já recebemos mensagens recentes deste e-mail. Se for urgente, escreva pelo WhatsApp (42) 98441-4866.');
+        else { console.error('Envio recusado:', r); avisar('Não foi possível enviar agora. Tente de novo ou escreva para contato@conradomuller.adv.br.'); }
+      })
+      .catch(function (e) { console.error(e); avisar('Não foi possível enviar agora. Tente de novo ou escreva para contato@conradomuller.adv.br.'); })
+      .then(function () { botao.disabled = false; botao.textContent = 'Enviar mensagem'; });
+  });
+})();
+</script>
 </body>
 </html>

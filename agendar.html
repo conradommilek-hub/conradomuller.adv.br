@@ -283,8 +283,8 @@
     <span class="u" aria-hidden="true">Ü</span>
     <div>
       <span class="claro">Conrado Müller Advocacia</span><br>
-      Sociedade Individual de Advocacia OAB/PR 2625228 · CNPJ 69.864.166/0001-52<br>
-      Responsável técnico: Conrado Müller Milek, Adv. OAB/PR 114.843<br>
+      Sociedade Individual de Advocacia OAB/PR 2625228<br>
+      CNPJ 69.864.166/0001-52<br>
       Ponta Grossa, Paraná · Atendimento online em todo o Brasil<br>
       <a href="mailto:contato@conradomuller.adv.br">contato@conradomuller.adv.br</a> · <a href="privacidade.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a>
     </div>
@@ -332,7 +332,7 @@
     $('aviso1').hidden = true;
     try {
       const dados = DEMO ? demoHorarios() : await fetch(URL_AGENDA + '?acao=horarios').then((r) => r.json());
-      if (!dados.ok) throw new Error(dados.erro || 'falha');
+      if (!dados.ok) throw new Error((dados.erro || 'falha') + (dados.detalhe ? ': ' + dados.detalhe : ''));
       estado.dias = dados.dias || {};
       const datas = Object.keys(estado.dias).sort();
       if (!datas.length) {
@@ -346,6 +346,7 @@
       $('carregando').hidden = true;
       $('escolha').hidden = false;
     } catch (e) {
+      console.error('Agenda indisponível:', e);
       $('carregando').hidden = true;
       mostrarAviso('aviso1', 'Não foi possível carregar os horários agora. Tente de novo em instantes ou, se preferir, fale com o escritório pelo WhatsApp (42) 98441-4866.');
     }
