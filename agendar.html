@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agendar conversa | Conrado Müller Advocacia</title>
+<meta name="description" content="Agende uma conversa inicial com o Dr. Conrado Müller, por videoconferência.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@400;500&family=Spectral+SC:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --grafite: #2A2522;
+    --texto: #3A3431;
+    --taupe: #6B6058;
+    --linha: #DDD5CB;
+    --fundo: #F3F1EE;
+    --branco: #FFFFFF;
+    --terra: #D2601A;
+    --terra-suave: #F7E9DF;
+    --erro: #A23A1C;
+    --raio: 2px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--fundo);
+    color: var(--texto);
+    font: 400 17px/1.6 "DM Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--grafite); text-underline-offset: 3px; }
+  a:hover { color: var(--terra); }
+  :focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
+
+  /* Cabeçalho */
+  .topo { background: var(--fundo); border-bottom: 1px solid var(--linha); }
+  .topo-in { max-width: 1040px; margin: 0 auto; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .marca { text-decoration: none; color: var(--grafite); display: flex; align-items: center; gap: 14px; }
+  .marca .u { font-family: "Spectral SC", Georgia, serif; font-size: 40px; line-height: 1; font-weight: 600; color: var(--terra); }
+  .marca .fio { width: 1px; height: 36px; background: #D3CAC0; }
+  .marca .nome { display: flex; flex-direction: column; gap: 5px; font-family: "Spectral SC", Georgia, serif; font-size: 21px; font-weight: 600; letter-spacing: .04em; line-height: 1; }
+  .marca .nome b { font-weight: 600; color: var(--terra); }
+  .marca .nome small { font-family: "DM Sans", sans-serif; font-size: 10px; letter-spacing: .32em; text-transform: uppercase; color: var(--taupe); font-weight: 400; }
+  .voltar { font-size: 15px; color: var(--grafite); text-decoration: none; }
+  .voltar:hover { color: var(--taupe); }
+
+  /* Abertura */
+  main { max-width: 1040px; margin: 0 auto; padding: 56px 20px 72px; }
+  .sobretitulo { display: flex; align-items: center; gap: 14px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--grafite); margin: 0 0 24px; font-weight: 500; }
+  .sobretitulo::before { content: ""; width: 40px; height: 1px; background: var(--terra); }
+  h1 { font-family: "Playfair Display", Georgia, serif; font-weight: 400; color: var(--grafite); font-size: clamp(30px, 4.4vw, 42px); line-height: 1.15; margin: 0 0 16px; }
+  .chamada { max-width: 620px; margin: 0 0 22px; color: var(--texto); }
+  .detalhes { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0 0 36px; padding: 0; list-style: none; font-size: 15px; color: var(--taupe); }
+  .detalhes li::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--terra); margin: 0 9px 2px 0; vertical-align: middle; }
+
+  /* Cartão */
+  .cartao { background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); }
+  .etapas { display: flex; border-bottom: 1px solid var(--linha); margin: 0; padding: 0; list-style: none; }
+  .etapas li { flex: 1; padding: 16px 20px; font-size: 14px; color: var(--taupe); display: flex; align-items: center; gap: 10px; }
+  .etapas li + li { border-left: 1px solid var(--linha); }
+  .etapas .num { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--linha); display: inline-grid; place-items: center; font-size: 13px; flex: none; }
+  .etapas li.ativa { color: var(--grafite); font-weight: 600; }
+  .etapas li.ativa .num { border-color: var(--grafite); background: var(--grafite); color: var(--branco); }
+  .etapas li.feita .num { border-color: var(--terra); color: var(--terra); }
+  .painel { padding: 32px; }
+  .painel[hidden] { display: none; }
+  h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 400; font-size: 24px; color: var(--grafite); margin: 0 0 6px; }
+  .sub { color: var(--taupe); margin: 0 0 26px; font-size: 15px; }
+
+  /* Calendário */
+  .escolha { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; }
+  .mes { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .mes strong { font-weight: 600; color: var(--grafite); }
+  .navmes { background: none; border: 1px solid var(--linha); border-radius: 50%; width: 34px; height: 34px; cursor: pointer; color: var(--grafite); font-size: 16px; line-height: 1; }
+  .navmes:disabled { opacity: .35; cursor: default; }
+  .grade { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; }
+  .grade .sem { font-size: 12px; color: var(--taupe); letter-spacing: .08em; padding-bottom: 6px; }
+  .dia { aspect-ratio: 1; border: 1px solid transparent; border-radius: 50%; background: none; font: inherit; font-size: 15px; color: #C5BDB5; cursor: default; display: grid; place-items: center; padding: 0; }
+  .dia.livre { color: var(--grafite); border-color: var(--linha); cursor: pointer; font-weight: 500; }
+  .dia.livre:hover { border-color: var(--grafite); }
+  .dia.sel { background: var(--grafite); border-color: var(--grafite); color: var(--branco); }
+  .horas h3 { font-size: 15px; font-weight: 600; color: var(--grafite); margin: 0 0 14px; }
+  .horas .vazio { color: var(--taupe); font-size: 15px; margin: 0; }
+  .lista-horas { display: grid; gap: 10px; }
+  .hora { border: 1px solid var(--linha); background: var(--branco); border-radius: var(--raio); padding: 12px 16px; font: inherit; color: var(--grafite); cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center; }
+  .hora:hover { border-color: var(--grafite); }
+  .hora.sel { border-color: var(--terra); background: var(--terra-suave); }
+  .hora.sel::after { content: "Selecionado"; font-size: 13px; color: var(--terra); }
+
+  /* Formulário */
+  .resumo { display: flex; justify-content: space-between; align-items: center; gap: 16px; background: var(--fundo); border-radius: var(--raio); padding: 14px 18px; margin-bottom: 28px; font-size: 15px; }
+  .resumo strong { color: var(--grafite); font-weight: 600; }
+  .link-botao { background: none; border: 0; padding: 0; font: inherit; font-size: 15px; color: var(--grafite); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+  .link-botao:hover { color: var(--terra); }
+  .campos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+  .campo { display: flex; flex-direction: column; gap: 6px; }
+  .campo.inteiro { grid-column: 1 / -1; }
+  label, .rotulo { font-size: 14px; font-weight: 600; color: var(--grafite); }
+  label .opc { font-weight: 400; color: var(--taupe); }
+  input[type=text], input[type=email], input[type=tel], textarea {
+    font: inherit; font-size: 16px; color: var(--grafite); background: var(--branco);
+    border: 1px solid var(--linha); border-radius: var(--raio); padding: 11px 13px; width: 100%;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--grafite); }
+  textarea { min-height: 120px; resize: vertical; }
+  .ajuda { font-size: 13px; color: var(--taupe); margin: 0; }
+  .campo.invalido input, .campo.invalido textarea { border-color: var(--erro); }
+  .msg-campo { font-size: 13px; color: var(--erro); margin: 0; display: none; }
+  .campo.invalido .msg-campo { display: block; }
+  .armadilha { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .aceite { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+  .aceite input { width: 18px; height: 18px; margin-top: 4px; accent-color: var(--grafite); flex: none; }
+  .aceite label { font-weight: 400; color: var(--texto); }
+
+  /* Ações e mensagens */
+  .acoes { display: flex; justify-content: flex-end; gap: 16px; align-items: center; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--linha); }
+  .botao { font: inherit; font-weight: 600; font-size: 16px; background: var(--grafite); color: var(--branco); border: 0; border-radius: var(--raio); padding: 13px 26px; cursor: pointer; }
+  .botao:hover { background: #000; }
+  .botao:disabled { background: #B9B1A9; cursor: default; }
+  .aviso { border-radius: var(--raio); padding: 14px 18px; font-size: 15px; margin: 0 0 22px; background: var(--terra-suave); color: var(--grafite); border-left: 3px solid var(--terra); }
+  .aviso[hidden] { display: none; }
+  .carregando { color: var(--taupe); font-size: 15px; padding: 40px 0; text-align: center; }
+
+  /* Confirmação */
+  .confirmado { text-align: center; padding: 20px 0 10px; }
+  .selo { width: 54px; height: 54px; border-radius: 50%; border: 1px solid var(--terra); color: var(--terra); display: grid; place-items: center; margin: 0 auto 18px; font-size: 22px; }
+  .confirmado p { max-width: 520px; margin: 0 auto 12px; }
+  .confirmado .quando { font-size: 19px; color: var(--grafite); font-weight: 600; margin: 4px auto 20px; }
+
+  .demo { font-size: 13px; color: var(--taupe); text-align: center; margin: 16px 0 0; }
+
+  /* Rodapé */
+  footer { background: var(--grafite); color: #B0A69B; }
+  .rodape { max-width: 1040px; margin: 0 auto; padding: 40px 20px; font-size: 14px; line-height: 1.7; display: flex; gap: 20px; align-items: flex-start; }
+  .rodape .u { font-family: "Spectral SC", Georgia, serif; font-size: 40px; line-height: 1; font-weight: 600; color: var(--terra); }
+  .rodape .claro { color: #F3F1EE; }
+  .rodape a { color: #CFC6BC; }
+  .rodape a:hover { color: #F3F1EE; }
+
+  @media (max-width: 760px) {
+    main { padding: 36px 16px 56px; }
+    .painel { padding: 24px 18px; }
+    .escolha { grid-template-columns: 1fr; gap: 30px; }
+    .campos { grid-template-columns: 1fr; }
+    .etapas li { padding: 12px 10px; font-size: 13px; justify-content: center; }
+    .etapas li .txt { display: none; }
+    .etapas li.ativa .txt { display: inline; }
+    .resumo { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .acoes { flex-direction: column-reverse; align-items: stretch; }
+    .botao { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="/" aria-label="Conrado Müller Advocacia, início">
+      <span class="u" aria-hidden="true">Ü</span>
+      <span class="fio" aria-hidden="true"></span>
+      <span class="nome" aria-hidden="true"><span>Conrado M<b>ü</b>ller</span><small>Advocacia</small></span>
+    </a>
+    <a class="voltar" href="/">Voltar ao site</a>
+  </div>
+</header>
+
+<main>
+  <p class="sobretitulo">Agendamento</p>
+  <h1>Agende uma conversa inicial</h1>
+  <p class="chamada">Escolha o dia e o horário que forem melhores para você. Na conversa, o Dr. Conrado entende com calma a sua demanda e, se fizer sentido, envia depois uma proposta por escrito.</p>
+  <ul class="detalhes">
+    <li>Cerca de 30 minutos</li>
+    <li>Por videoconferência</li>
+    <li>Atendimento em todo o Brasil</li>
+  </ul>
+
+  <section class="cartao" aria-label="Agendamento">
+    <ol class="etapas">
+      <li data-etapa="1" class="ativa"><span class="num">1</span><span class="txt">Data e horário</span></li>
+      <li data-etapa="2"><span class="num">2</span><span class="txt">Seus dados</span></li>
+      <li data-etapa="3"><span class="num">3</span><span class="txt">Confirmação</span></li>
+    </ol>
+
+    <!-- Etapa 1 -->
+    <div class="painel" id="p1">
+      <h2>Quando fica melhor para você?</h2>
+      <p class="sub">Os dias destacados têm horários livres. Os agendamentos são feitos com pelo menos 48 horas de antecedência, sempre no horário de Brasília.</p>
+      <p class="aviso" id="aviso1" role="alert" hidden></p>
+      <div id="carregando" class="carregando">Carregando os horários disponíveis…</div>
+      <div class="escolha" id="escolha" hidden>
+        <div>
+          <div class="mes">
+            <button type="button" class="navmes" id="antes" aria-label="Mês anterior">‹</button>
+            <strong id="rotuloMes" aria-live="polite"></strong>
+            <button type="button" class="navmes" id="depois" aria-label="Próximo mês">›</button>
+          </div>
+          <div class="grade" id="grade"></div>
+        </div>
+        <div class="horas">
+          <h3 id="tituloHoras">Horários</h3>
+          <p class="vazio" id="semDia">Selecione um dia no calendário.</p>
+          <div class="lista-horas" id="listaHoras"></div>
+        </div>
+      </div>
+      <div class="acoes">
+        <button type="button" class="botao" id="continuar" disabled>Continuar</button>
+      </div>
+    </div>
+
+    <!-- Etapa 2 -->
+    <form class="painel" id="p2" hidden novalidate>
+      <h2>Agora, alguns dados</h2>
+      <p class="sub">Assim o Dr. Conrado já chega à conversa sabendo do que se trata.</p>
+      <div class="resumo">
+        <span>Conversa em <strong id="resumoQuando"></strong></span>
+        <button type="button" class="link-botao" id="alterar">Alterar horário</button>
+      </div>
+      <p class="aviso" id="aviso2" role="alert" hidden></p>
+      <div class="campos">
+        <div class="campo" data-campo="nome">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" maxlength="120" required>
+          <p class="msg-campo">Informe seu nome.</p>
+        </div>
+        <div class="campo" data-campo="email">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" maxlength="160" required>
+          <p class="msg-campo">Informe um e-mail válido. O convite será enviado para ele.</p>
+        </div>
+        <div class="campo">
+          <label for="whatsapp">WhatsApp <span class="opc">(opcional)</span></label>
+          <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" maxlength="30">
+        </div>
+        <div class="campo">
+          <label for="empresa">Empresa <span class="opc">(opcional)</span></label>
+          <input type="text" id="empresa" name="empresa" autocomplete="organization" maxlength="120">
+        </div>
+        <div class="campo inteiro" data-campo="assunto">
+          <label for="assunto">Do que se trata?</label>
+          <textarea id="assunto" name="assunto" maxlength="1500" required></textarea>
+          <p class="ajuda">Algumas linhas bastam. Não é preciso enviar documentos nem informações sigilosas agora.</p>
+          <p class="msg-campo">Conte brevemente do que se trata.</p>
+        </div>
+        <div class="campo inteiro">
+          <label for="outraParte">Outra parte envolvida <span class="opc">(opcional)</span></label>
+          <input type="text" id="outraParte" name="outraParte" maxlength="160">
+          <p class="ajuda">Se houver disputa, cobrança ou negociação, informe o nome da outra pessoa ou empresa.</p>
+        </div>
+        <div class="armadilha" aria-hidden="true">
+          <label for="website">Site</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="campo inteiro" data-campo="consentimento">
+          <div class="aceite">
+            <input type="checkbox" id="consentimento" name="consentimento" required>
+            <label for="consentimento">Concordo com o uso destes dados para o meu atendimento, nos termos da <a href="/privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</label>
+          </div>
+          <p class="msg-campo">Para agendar, é preciso concordar com a política de privacidade.</p>
+        </div>
+      </div>
+      <div class="acoes">
+        <button type="submit" class="botao" id="confirmar">Confirmar agendamento</button>
+      </div>
+    </form>
+
+    <!-- Etapa 3 -->
+    <div class="painel" id="p3" hidden>
+      <div class="confirmado" aria-live="polite">
+        <div class="selo" aria-hidden="true">✓</div>
+        <h2>Conversa agendada</h2>
+        <p class="quando" id="confirmadoQuando"></p>
+        <p>Em instantes você recebe por e-mail o convite com o link da videoconferência. Na véspera, enviamos também um lembrete.</p>
+        <p>Se precisar remarcar, é só responder ao convite ou escrever pelo WhatsApp <a href="https://wa.me/5542984414866">(42) 98441-4866</a>.</p>
+      </div>
+    </div>
+  </section>
+  <p class="demo" id="demo" hidden>Modo de demonstração: os horários são fictícios e nenhum agendamento é criado.</p>
+</main>
+
+<footer>
+  <div class="rodape">
+    <span class="u" aria-hidden="true">Ü</span>
+    <div>
+      <span class="claro">Conrado Müller Advocacia</span><br>
+      Sociedade Individual de Advocacia OAB/PR 2625228 · CNPJ 69.864.166/0001-52<br>
+      Responsável técnico: Conrado Müller Milek, Adv. OAB/PR 114.843<br>
+      Ponta Grossa, Paraná · Atendimento online em todo o Brasil<br>
+      <a href="mailto:contato@conradomuller.adv.br">contato@conradomuller.adv.br</a> · <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ─── Configuração ───────────────────────────────────────────
+  // "https://script.google.com/macros/s/AKfycbxvhlsMMM3wPtXZ0IPmkETFXVDxctrOrxM6di2KR4VPu4gv5iJryVw1m59y0PwgWZWS/exec"
+  // Enquanto estiver como está, a página funciona em modo de demonstração.
+  const URL_AGENDA = 'COLE_AQUI_O_ENDERECO_DO_APP_DA_WEB';
+  const FUSO = 'America/Sao_Paulo';
+  // ────────────────────────────────────────────────────────────
+
+  const DEMO = URL_AGENDA.indexOf('COLE_AQUI') === 0;
+  const $ = (id) => document.getElementById(id);
+  const estado = { dias: {}, mesBase: null, dia: null, horario: null };
+
+  const fmtMes = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const fmtDiaLongo = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+
+  function dataUTC(iso) { const [a, m, d] = iso.split('-').map(Number); return new Date(Date.UTC(a, m - 1, d)); }
+  function isoUTC(dt) { return dt.toISOString().slice(0, 10); }
+  function maiuscula(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+  function rotuloHora(h) { return h.replace(':00', 'h').replace(':', 'h'); }
+  function quandoTexto() {
+    return maiuscula(fmtDiaLongo.format(dataUTC(estado.dia))) + ', às ' + rotuloHora(estado.horario.rotulo);
+  }
+
+  // ─── Etapas ────────────────────────────────────────────────
+  function irPara(n) {
+    ['p1', 'p2', 'p3'].forEach((id, i) => { $(id).hidden = i + 1 !== n; });
+    document.querySelectorAll('.etapas li').forEach((li) => {
+      const e = Number(li.dataset.etapa);
+      li.classList.toggle('ativa', e === n);
+      li.classList.toggle('feita', e < n);
+    });
+    document.querySelector('.cartao').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ─── Carregar horários ─────────────────────────────────────
+  async function carregar() {
+    $('carregando').hidden = false;
+    $('escolha').hidden = true;
+    $('aviso1').hidden = true;
+    try {
+      const dados = DEMO ? demoHorarios() : await fetch(URL_AGENDA + '?acao=horarios').then((r) => r.json());
+      if (!dados.ok) throw new Error(dados.erro || 'falha');
+      estado.dias = dados.dias || {};
+      const datas = Object.keys(estado.dias).sort();
+      if (!datas.length) {
+        mostrarAviso('aviso1', 'No momento não há horários disponíveis nas próximas semanas. Fale com o escritório pelo WhatsApp (42) 98441-4866 e combinamos um horário.');
+        $('carregando').hidden = true;
+        return;
+      }
+      const primeira = dataUTC(datas[0]);
+      estado.mesBase = new Date(Date.UTC(primeira.getUTCFullYear(), primeira.getUTCMonth(), 1));
+      desenharMes();
+      $('carregando').hidden = true;
+      $('escolha').hidden = false;
+    } catch (e) {
+      $('carregando').hidden = true;
+      mostrarAviso('aviso1', 'Não foi possível carregar os horários agora. Tente de novo em instantes ou, se preferir, fale com o escritório pelo WhatsApp (42) 98441-4866.');
+    }
+  }
+
+  function desenharMes() {
+    const base = estado.mesBase;
+    $('rotuloMes').textContent = maiuscula(fmtMes.format(base));
+    const grade = $('grade');
+    grade.innerHTML = '';
+    ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].forEach((s) => {
+      const el = document.createElement('div'); el.className = 'sem'; el.textContent = s; el.setAttribute('aria-hidden', 'true'); grade.appendChild(el);
+    });
+    const ano = base.getUTCFullYear(), mes = base.getUTCMonth();
+    const inicioSemana = new Date(Date.UTC(ano, mes, 1)).getUTCDay();
+    const totalDias = new Date(Date.UTC(ano, mes + 1, 0)).getUTCDate();
+    for (let i = 0; i < inicioSemana; i++) grade.appendChild(document.createElement('div'));
+    for (let d = 1; d <= totalDias; d++) {
+      const iso = isoUTC(new Date(Date.UTC(ano, mes, d)));
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'dia';
+      b.textContent = d;
+      const livre = !!estado.dias[iso];
+      if (livre) {
+        b.classList.add('livre');
+        b.setAttribute('aria-label', fmtDiaLongo.format(dataUTC(iso)) + ', com horários disponíveis');
+        b.addEventListener('click', () => escolherDia(iso));
+      } else {
+        b.disabled = true;
+      }
+      if (iso === estado.dia) { b.classList.add('sel'); b.setAttribute('aria-pressed', 'true'); }
+      grade.appendChild(b);
+    }
+    const datas = Object.keys(estado.dias).sort();
+    const primeiroMes = datas[0].slice(0, 7), ultimoMes = datas[datas.length - 1].slice(0, 7);
+    const atual = isoUTC(base).slice(0, 7);
+    $('antes').disabled = atual <= primeiroMes;
+    $('depois').disabled = atual >= ultimoMes;
+  }
+
+  function mudarMes(delta) {
+    const b = estado.mesBase;
+    estado.mesBase = new Date(Date.UTC(b.getUTCFullYear(), b.getUTCMonth() + delta, 1));
+    desenharMes();
+  }
+
+  function escolherDia(iso) {
+    estado.dia = iso;
+    estado.horario = null;
+    $('continuar').disabled = true;
+    desenharMes();
+    $('tituloHoras').textContent = maiuscula(fmtDiaLongo.format(dataUTC(iso)));
+    $('semDia').hidden = true;
+    const lista = $('listaHoras');
+    lista.innerHTML = '';
+    estado.dias[iso].forEach((h) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'hora';
+      b.textContent = rotuloHora(h.rotulo);
+      b.addEventListener('click', () => {
+        estado.horario = h;
+        lista.querySelectorAll('.hora').forEach((x) => { x.classList.remove('sel'); x.removeAttribute('aria-pressed'); });
+        b.classList.add('sel');
+        b.setAttribute('aria-pressed', 'true');
+        $('continuar').disabled = false;
+      });
+      lista.appendChild(b);
+    });
+  }
+
+  function mostrarAviso(id, texto) { const el = $(id); el.textContent = texto; el.hidden = false; }
+
+  // ─── Formulário ────────────────────────────────────────────
+  function validar() {
+    const f = $('p2');
+    const erros = {
+      nome: f.nome.value.trim().length < 2,
+      email: !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim()),
+      assunto: f.assunto.value.trim().length < 5,
+      consentimento: !f.consentimento.checked,
+    };
+    let primeiro = null;
+    Object.keys(erros).forEach((k) => {
+      const campo = f.querySelector('[data-campo="' + k + '"]');
+      campo.classList.toggle('invalido', erros[k]);
+      if (erros[k] && !primeiro) primeiro = f[k];
+    });
+    if (primeiro) primeiro.focus();
+    return !primeiro;
+  }
+
+  const MENSAGENS = {
+    horario_indisponivel: 'Esse horário acabou de ser preenchido. Escolha outro, por favor.',
+    limite_email: 'Já recebemos agendamentos recentes com este e-mail. Se precisar de outro horário, fale com o escritório pelo WhatsApp (42) 98441-4866.',
+    ocupado: 'Muitas solicitações ao mesmo tempo. Tente de novo em alguns segundos.',
+  };
+
+  async function enviar(ev) {
+    ev.preventDefault();
+    $('aviso2').hidden = true;
+    if (!validar()) return;
+    const f = $('p2');
+    const corpo = {
+      inicio: estado.horario.inicio,
+      nome: f.nome.value.trim(),
+      email: f.email.value.trim(),
+      whatsapp: f.whatsapp.value.trim(),
+      empresa: f.empresa.value.trim(),
+      assunto: f.assunto.value.trim(),
+      outraParte: f.outraParte.value.trim(),
+      consentimento: f.consentimento.checked,
+      website: f.website.value,
+    };
+    const botao = $('confirmar');
+    botao.disabled = true;
+    botao.textContent = 'Confirmando…';
+    try {
+      const r = DEMO
+        ? await new Promise((ok) => setTimeout(() => ok({ ok: true }), 900))
+        : await fetch(URL_AGENDA, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(corpo) }).then((x) => x.json());
+      if (r.ok) {
+        $('confirmadoQuando').textContent = quandoTexto();
+        irPara(3);
+        return;
+      }
+      if (r.erro === 'horario_indisponivel') {
+        estado.dia = null; estado.horario = null;
+        $('continuar').disabled = true;
+        $('listaHoras').innerHTML = '';
+        $('semDia').hidden = false;
+        $('tituloHoras').textContent = 'Horários';
+        irPara(1);
+        await carregar();
+        mostrarAviso('aviso1', MENSAGENS.horario_indisponivel);
+        return;
+      }
+      mostrarAviso('aviso2', MENSAGENS[r.erro] || 'Não foi possível concluir o agendamento. Confira os dados e tente de novo.');
+    } catch (e) {
+      mostrarAviso('aviso2', 'Não foi possível concluir o agendamento agora. Tente de novo em instantes ou fale com o escritório pelo WhatsApp (42) 98441-4866.');
+    } finally {
+      botao.disabled = false;
+      botao.textContent = 'Confirmar agendamento';
+    }
+  }
+
+  // ─── Demonstração ──────────────────────────────────────────
+  function demoHorarios() {
+    const dias = {};
+    const agora = Date.now();
+    for (let i = 3; i <= 30; i++) {
+      const d = new Date(agora + i * 86400000);
+      const sem = d.getDay();
+      if (sem === 0 || sem === 6) continue;
+      const iso = d.toISOString().slice(0, 10);
+      const horas = ['19:00', '19:45', '20:30'].filter((_, k) => (i + k) % 4 !== 0);
+      dias[iso] = horas.map((h) => ({ inicio: iso + 'T' + h + ':00-03:00', rotulo: h }));
+    }
+    return { ok: true, dias };
+  }
+
+  // ─── Ligações ──────────────────────────────────────────────
+  $('antes').addEventListener('click', () => mudarMes(-1));
+  $('depois').addEventListener('click', () => mudarMes(1));
+  $('continuar').addEventListener('click', () => { $('resumoQuando').textContent = quandoTexto().replace(/^./, (c) => c.toLowerCase()); irPara(2); $('nome').focus({ preventScroll: true }); });
+  $('alterar').addEventListener('click', () => irPara(1));
+  $('p2').addEventListener('submit', enviar);
+  $('p2').addEventListener('input', (e) => { const c = e.target.closest('.campo'); if (c) c.classList.remove('invalido'); });
+  if (DEMO) $('demo').hidden = false;
+  carregar();
+})();
+</script>
+</body>
+</html>
