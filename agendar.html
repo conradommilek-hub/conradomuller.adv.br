@@ -156,12 +156,12 @@
 
 <header class="topo">
   <div class="topo-in">
-    <a class="marca" href="/" aria-label="Conrado Müller Advocacia, início">
+    <a class="marca" href="index.html" aria-label="Conrado Müller Advocacia, início">
       <span class="u" aria-hidden="true">Ü</span>
       <span class="fio" aria-hidden="true"></span>
       <span class="nome" aria-hidden="true"><span>Conrado M<b>ü</b>ller</span><small>Advocacia</small></span>
     </a>
-    <a class="voltar" href="/">Voltar ao site</a>
+    <a class="voltar" href="index.html">Voltar ao site</a>
   </div>
 </header>
 
@@ -254,7 +254,7 @@
         <div class="campo inteiro" data-campo="consentimento">
           <div class="aceite">
             <input type="checkbox" id="consentimento" name="consentimento" required>
-            <label for="consentimento">Concordo com o uso destes dados para o meu atendimento, nos termos da <a href="/privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</label>
+            <label for="consentimento">Concordo com o uso destes dados para o meu atendimento, nos termos da <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</label>
           </div>
           <p class="msg-campo">Para agendar, é preciso concordar com a política de privacidade.</p>
         </div>
@@ -286,7 +286,7 @@
       Sociedade Individual de Advocacia OAB/PR 2625228 · CNPJ 69.864.166/0001-52<br>
       Responsável técnico: Conrado Müller Milek, Adv. OAB/PR 114.843<br>
       Ponta Grossa, Paraná · Atendimento online em todo o Brasil<br>
-      <a href="mailto:contato@conradomuller.adv.br">contato@conradomuller.adv.br</a> · <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a>
+      <a href="mailto:contato@conradomuller.adv.br">contato@conradomuller.adv.br</a> · <a href="privacidade.html">Política de Privacidade</a> · <a href="termos.html">Termos de Uso</a>
     </div>
   </div>
 </footer>
@@ -294,9 +294,8 @@
 <script>
 (function () {
   // ─── Configuração ───────────────────────────────────────────
-  // "https://script.google.com/macros/s/AKfycbxvhlsMMM3wPtXZ0IPmkETFXVDxctrOrxM6di2KR4VPu4gv5iJryVw1m59y0PwgWZWS/exec"
-  // Enquanto estiver como está, a página funciona em modo de demonstração.
-  const URL_AGENDA = 'COLE_AQUI_O_ENDERECO_DO_APP_DA_WEB';
+  // Endereço do App da Web do Google Apps Script (motor da agenda).
+  const URL_AGENDA = 'https://script.google.com/macros/s/AKfycbxvhlsMMM3wPtXZ0IPmkETFXVDxctrOrxM6di2KR4VPu4gv5iJryVw1m59y0PwgWZWS/exec';
   const FUSO = 'America/Sao_Paulo';
   // ────────────────────────────────────────────────────────────
 
