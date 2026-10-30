@@ -218,20 +218,49 @@ details[open] .faq-plus{transform:rotate(45deg)}
   </section>
 
   <!-- CTA -->
-  <section aria-labelledby="cta-titulo" style="padding: 96px 24px; background: #2A2522; color: #F3F1EE">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px">
-      <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+  <section id="duvida" aria-labelledby="cta-titulo" style="padding: 112px 24px; background: #2A2522; color: #F3F1EE">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px 96px">
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
         <div style="display: flex; align-items: center; gap: 14px">
           <span style="display: block; width: 40px; height: 1px; background: #D2601A"></span>
-          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Contato</span>
+          <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Dúvidas pontuais</span>
         </div>
         <h2 id="cta-titulo" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.8vw, 46px); line-height: 1.15; margin: 0">Não encontrou a sua dúvida?</h2>
-        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 520px">Conte-nos brevemente a situação. O retorno é feito em até 1 dia útil, com a indicação do caminho mais adequado.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Escreva por aqui. Você recebe a confirmação do recebimento por e-mail, e a resposta chega em até 1 dia útil.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Se a situação pede uma análise mais detida, o melhor caminho é uma conversa por videoconferência.</p>
+        <a href="agendar.html" style="align-self: flex-start; text-decoration: none; border: 1px solid #CFC6BC; color: #F3F1EE; padding: 15px 27px; border-radius: 2px; font-size: 16px; font-weight: 500">Agende uma conversa</a>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 16px">
-        <a href="agendar.html" style="text-decoration: none; background: #F3F1EE; color: #2A2522; padding: 16px 28px; border-radius: 2px; font-size: 16px; font-weight: 500">Agende uma conversa</a>
-        <a href="https://wa.me/5542984414866?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20conversar%20com%20o%20escrit%C3%B3rio." style="text-decoration: none; border: 1px solid #CFC6BC; color: #F3F1EE; padding: 15px 27px; border-radius: 2px; font-size: 16px; font-weight: 500">WhatsApp (42) 98441-4866</a>
-      </div>
+      <form id="form-duvidas" novalidate style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px">
+          <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Nome
+            <input type="text" name="nome" autocomplete="name" maxlength="120" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
+          </label>
+          <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">E-mail
+            <input type="email" name="email" autocomplete="email" maxlength="160" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
+          </label>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px">
+          <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Empresa (opcional)
+            <input type="text" name="empresa" autocomplete="organization" maxlength="120" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
+          </label>
+          <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">WhatsApp (opcional)
+            <input type="tel" name="whatsapp" autocomplete="tel" maxlength="30" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
+          </label>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Sua dúvida
+          <textarea name="mensagem" rows="5" maxlength="3000" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px; resize: vertical"></textarea>
+          <span style="font-size: 13px; color: #B0A69B">Não inclua documentos nem informações sigilosas.</span>
+        </label>
+        <div aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden">
+          <label>Site <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #CFC6BC">
+          <input type="checkbox" name="lgpd" style="margin-top: 3px; width: 18px; height: 18px; accent-color: #D2601A; flex: none">
+          <span>Li e aceito a <a href="privacidade.html" style="color: #F3F1EE">Política de Privacidade</a> e autorizo o uso dos meus dados para retorno deste contato.</span>
+        </label>
+        <p id="duvidas-status" role="status" aria-live="polite" style="margin: 0; font-size: 15px; line-height: 1.6; color: #F3F1EE"></p>
+        <button type="submit" style="align-self: flex-start; font: inherit; font-size: 16px; font-weight: 500; background: #F3F1EE; color: #2A2522; border: none; padding: 16px 32px; border-radius: 2px; cursor: pointer; min-height: 48px">Enviar mensagem</button>
+      </form>
     </div>
   </section>
 
@@ -261,5 +290,43 @@ details[open] .faq-plus{transform:rotate(45deg)}
   </footer>
 
 </div>
+<script>
+(function () {
+  // Mesmo endereço do App da Web usado na página de agendamento.
+  var URL_AGENDA = 'https://script.google.com/macros/s/AKfycbzs5UatIOEa_M-T3MzZ3CZGKoscbPstjK2CkOakOZKXx6nnJZrprRWcODJn0GfpyXDD/exec';
+  var form = document.getElementById('form-duvidas');
+  if (!form) return;
+  var status = document.getElementById('duvidas-status');
+  var botao = form.querySelector('button[type=submit]');
+  function avisar(t) { status.textContent = t; }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var d = {
+      tipo: 'mensagem',
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim(),
+      empresa: form.empresa.value.trim(),
+      whatsapp: form.whatsapp.value.trim(),
+      mensagem: form.mensagem.value.trim(),
+      consentimento: form.lgpd.checked,
+      website: form.website.value
+    };
+    if (d.nome.length < 2) { avisar('Informe seu nome.'); form.nome.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) { avisar('Informe um e-mail válido para a resposta.'); form.email.focus(); return; }
+    if (d.mensagem.length < 5) { avisar('Escreva brevemente a sua dúvida.'); form.mensagem.focus(); return; }
+    if (!d.consentimento) { avisar('Para enviar, é preciso aceitar a Política de Privacidade.'); form.lgpd.focus(); return; }
+    botao.disabled = true; botao.textContent = 'Enviando…'; avisar('');
+    fetch(URL_AGENDA, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json(); })
+      .then(function (r) {
+        if (r.ok) { form.reset(); avisar('Mensagem enviada. Enviamos a confirmação do recebimento para o seu e-mail (se não encontrar, confira o spam). A resposta chega em até 1 dia útil.'); }
+        else if (r.erro === 'limite_email') avisar('Já recebemos mensagens recentes deste e-mail. Se for urgente, escreva pelo WhatsApp (42) 98441-4866.');
+        else { console.error('Envio recusado:', r); avisar('Não foi possível enviar agora. Tente de novo ou escreva para contato@conradomuller.adv.br.'); }
+      })
+      .catch(function (e) { console.error(e); avisar('Não foi possível enviar agora. Tente de novo ou escreva para contato@conradomuller.adv.br.'); })
+      .then(function () { botao.disabled = false; botao.textContent = 'Enviar mensagem'; });
+  });
+})();
+</script>
 </body>
 </html>

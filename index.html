@@ -290,7 +290,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
           <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500">Dúvidas pontuais</span>
         </div>
         <h2 style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4vw, 52px); line-height: 1.12; margin: 0">Vamos conversar sobre a sua empresa.</h2>
-        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Se a sua dúvida é pontual, escreva por aqui. A resposta chega por e-mail em até 1 dia útil.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Se a sua dúvida é pontual, escreva por aqui. Você recebe a confirmação do recebimento por e-mail, e a resposta chega em até 1 dia útil.</p>
         <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #CFC6BC; max-width: 460px">Para tratar da sua demanda com calma, o melhor caminho é <a href="agendar.html" style="color: #F3F1EE; text-underline-offset: 3px">agendar uma conversa</a>.</p>
         <dl style="margin: 24px 0 0; display: flex; flex-direction: column; gap: 18px; font-size: 16px">
           <div><dt style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B0A69B">E-mail</dt><dd style="margin: 6px 0 0"><a href="mailto:contato@conradomuller.adv.br" style="color: #F3F1EE">contato@conradomuller.adv.br</a></dd></div>
@@ -307,9 +307,14 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
             <input type="email" name="email" autocomplete="email" maxlength="160" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
           </label>
         </div>
-        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Empresa (opcional)
-          <input type="text" name="empresa" autocomplete="organization" maxlength="120" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
-        </label>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px">
+          <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Empresa (opcional)
+            <input type="text" name="empresa" autocomplete="organization" maxlength="120" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
+          </label>
+          <label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">WhatsApp (opcional)
+            <input type="tel" name="whatsapp" autocomplete="tel" maxlength="30" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px">
+          </label>
+        </div>
         <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #CFC6BC">Sua dúvida
           <textarea name="mensagem" rows="5" maxlength="3000" style="font: inherit; font-size: 16px; padding: 14px 16px; background: #36302C; border: 1px solid #4A423D; color: #F3F1EE; border-radius: 2px; resize: vertical"></textarea>
           <span style="font-size: 13px; color: #B0A69B">Não inclua documentos nem informações sigilosas.</span>
@@ -368,6 +373,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
       nome: form.nome.value.trim(),
       email: form.email.value.trim(),
       empresa: form.empresa.value.trim(),
+      whatsapp: form.whatsapp.value.trim(),
       mensagem: form.mensagem.value.trim(),
       consentimento: form.lgpd.checked,
       website: form.website.value
@@ -380,7 +386,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid #D2601A;outline-offset
     fetch(URL_AGENDA, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(d) })
       .then(function (r) { return r.json(); })
       .then(function (r) {
-        if (r.ok) { form.reset(); avisar('Mensagem enviada. A resposta chega por e-mail em até 1 dia útil.'); }
+        if (r.ok) { form.reset(); avisar('Mensagem enviada. Enviamos a confirmação do recebimento para o seu e-mail (se não encontrar, confira o spam). A resposta chega em até 1 dia útil.'); }
         else if (r.erro === 'limite_email') avisar('Já recebemos mensagens recentes deste e-mail. Se for urgente, escreva pelo WhatsApp (42) 98441-4866.');
         else { console.error('Envio recusado:', r); avisar('Não foi possível enviar agora. Tente de novo ou escreva para contato@conradomuller.adv.br.'); }
       })
